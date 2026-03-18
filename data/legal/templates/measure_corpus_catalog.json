@@ -1,0 +1,520 @@
+{
+  "measures": [
+    {
+      "template_id": "medida_perimetro",
+      "measure_type": "perimetro",
+      "title": "Plantilla de prohibicion de acercamiento",
+      "summary": "Modelo base de resolucion para prohibicion de acercamiento y cese de actos de violencia por toda via de contacto.",
+      "template_file": "medida_perimetro.pdf",
+      "jurisdiction": "Provincia de Buenos Aires",
+      "legal_references": [
+        {
+          "id_suffix": "ley12569_art3",
+          "law": "Ley 12.569",
+          "article": "3",
+          "title": "Ley 12.569 art. 3",
+          "summary": "Regula la legitimacion para denunciar judicialmente hechos de violencia familiar. Habilita a denunciar a la persona afectada y a cualquier persona que haya tomado conocimiento de los hechos, y admite que la denuncia sea verbal o escrita.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "conforme lo prescriben el art. 3 de la Ley 12.569 y el art. 5 del Decreto 2875/05"
+        },
+        {
+          "id_suffix": "decreto2875_05_art5",
+          "law": "Decreto 2875/05",
+          "article": "5",
+          "title": "Decreto 2875/05 art. 5",
+          "summary": "Reglamenta la recepcion y derivacion de denuncias. Permite que menores e incapaces victimas de violencia familiar pongan los hechos en conocimiento de los organismos competentes sin acompañamiento y dispone que la denuncia en comisaria sea recibida obligatoriamente y remitida de inmediato a la autoridad judicial competente.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Decreto 2875/05 reglamentario de la Ley 12.569 - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/BK6XKuox.html",
+            "summary": "Decreto reglamentario de la Ley 12.569. Precisa pautas operativas para la recepcion, derivacion y tramitacion de denuncias, la intervencion de organismos administrativos y judiciales y la articulacion de la red de asistencia y proteccion."
+          },
+          "template_excerpt": "conforme lo prescriben el art. 3 de la Ley 12.569 y el art. 5 del Decreto 2875/05"
+        },
+        {
+          "id_suffix": "cpcc_art232",
+          "law": "CPCC Buenos Aires",
+          "article": "232",
+          "title": "CPCC Buenos Aires art. 232",
+          "summary": "Prevé las medidas cautelares genericas. Autoriza a pedir medidas urgentes aptas para asegurar provisionalmente el cumplimiento de la sentencia cuando exista un perjuicio inminente o irreparable antes del reconocimiento judicial del derecho.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Codigo Procesal Civil y Comercial de la Provincia de Buenos Aires",
+            "url": "https://normas.gba.gob.ar/documentos/VrQlgSOB.html",
+            "summary": "Codigo procesal aplicable en la Provincia de Buenos Aires para los procesos civiles y comerciales. Regula competencia, medidas cautelares, actividad probatoria, reserva de actuaciones y otras reglas procedimentales usadas como sustento formal de decisiones urgentes."
+          },
+          "template_excerpt": "a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC"
+        },
+        {
+          "id_suffix": "ley12569_art5_7_11_12",
+          "law": "Ley 12.569",
+          "article": "5, 7, 11 y 12",
+          "title": "Ley 12.569 arts. 5, 7, 11 y 12",
+          "summary": "El art. 5 habilita la denuncia directa por menores e incapaces victimas. El art. 7 enumera medidas urgentes de proteccion para evitar la repeticion de la violencia, como cese de actos, prohibicion de acercamiento, exclusion del hogar y otras. El art. 11 ordena audiencias separadas dentro de las 48 horas y el art. 12 exige fijar la duracion de la medida y permite su prorroga si persiste el riesgo.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "arts. 5, 7, 11 y 12 de la ley 12.569"
+        },
+        {
+          "id_suffix": "cp_art239",
+          "law": "Codigo Penal",
+          "article": "239",
+          "title": "Codigo Penal art. 239",
+          "summary": "Tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones. Suele citarse como apercibimiento frente al incumplimiento de una orden judicial de proteccion.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Penal de la Nacion Argentina - articulo 239",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16546/texact.htm",
+            "summary": "Texto oficial del Codigo Penal de la Nacion. El articulo 239 tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones, base penal habitual ante el incumplimiento de mandatos judiciales."
+          },
+          "template_excerpt": "dar intervencion al Sr. Juez en lo Penal que por turno corresponda (art. 239 del C. Penal)"
+        },
+        {
+          "id_suffix": "cc_art666bis",
+          "law": "Codigo Civil",
+          "article": "666 bis",
+          "title": "Codigo Civil art. 666 bis",
+          "summary": "Preveia condenaciones conminatorias de caracter pecuniario para quien incumpliera deberes juridicos impuestos en una resolucion judicial. Es una referencia historica del Codigo Civil derogado; su equivalente vigente se vincula hoy con el art. 804 del Codigo Civil y Comercial.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Civil (derogado) - articulo 666 bis",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/105000-109999/109481/texactley340_libroII_S1_tituloXI.htm",
+            "summary": "Texto historico del Codigo Civil derogado. El articulo 666 bis regulaba sanciones conminatorias pecuniarias o astreintes para compeler el cumplimiento de obligaciones judicialmente impuestas."
+          },
+          "template_excerpt": "multa conforme lo dispuesto por el art. 666 bis del C. Civil"
+        },
+        {
+          "id_suffix": "cpcc_art196",
+          "law": "CPCC Buenos Aires",
+          "article": "196",
+          "title": "CPCC Buenos Aires art. 196",
+          "summary": "Regula la medida precautoria decretada por juez incompetente. Establece que el juez debe abstenerse de decretarla si la causa no es de su competencia, pero mantiene la validez de la medida urgente si fue dictada conforme al capitulo y sin prorrogar la competencia.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Codigo Procesal Civil y Comercial de la Provincia de Buenos Aires",
+            "url": "https://normas.gba.gob.ar/documentos/VrQlgSOB.html",
+            "summary": "Codigo procesal aplicable en la Provincia de Buenos Aires para los procesos civiles y comerciales. Regula competencia, medidas cautelares, actividad probatoria, reserva de actuaciones y otras reglas procedimentales usadas como sustento formal de decisiones urgentes."
+          },
+          "template_excerpt": "sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del CPCC)"
+        }
+      ]
+    },
+    {
+      "template_id": "medida_exclusion",
+      "measure_type": "exclusion",
+      "title": "Plantilla de medida de exclusion del hogar",
+      "summary": "Modelo base de resolucion para exclusion del hogar, prohibicion de acercamiento y cuidado personal provisorio.",
+      "template_file": "medida_exclusion.pdf",
+      "jurisdiction": "Provincia de Buenos Aires",
+      "legal_references": [
+        {
+          "id_suffix": "ley12569_art3_5_7_11_12",
+          "law": "Ley 12.569",
+          "article": "3, 5, 7, 11 y 12",
+          "title": "Ley 12.569 arts. 3, 5, 7, 11 y 12",
+          "summary": "El art. 3 regula quienes pueden denunciar. El art. 5 habilita la denuncia directa por menores e incapaces victimas. El art. 7 enumera medidas urgentes como prohibicion de acercamiento, exclusion del hogar, reintegro y suspension provisoria de visitas. El art. 11 dispone audiencias separadas y el art. 12 exige fijar plazo y eventual prorroga de la medida.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569"
+        },
+        {
+          "id_suffix": "decreto2875_05_art5",
+          "law": "Decreto 2875/05",
+          "article": "5",
+          "title": "Decreto 2875/05 art. 5",
+          "summary": "Complementa la ley en materia de acceso a la denuncia, recepcion obligatoria en comisaria y derivacion inmediata a la autoridad judicial competente.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Decreto 2875/05 reglamentario de la Ley 12.569 - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/BK6XKuox.html",
+            "summary": "Decreto reglamentario de la Ley 12.569. Precisa pautas operativas para la recepcion, derivacion y tramitacion de denuncias, la intervencion de organismos administrativos y judiciales y la articulacion de la red de asistencia y proteccion."
+          },
+          "template_excerpt": "art. 5 del Dec. 2875/05 y conc."
+        },
+        {
+          "id_suffix": "cpcc_art232_384_827t",
+          "law": "Codigo Procesal",
+          "article": "232, 384 y 827 inc. t",
+          "title": "Codigo Procesal arts. 232, 384 y 827 inc. t",
+          "summary": "El art. 232 regula medidas cautelares genericas; el art. 384 establece que la prueba se aprecia conforme a las reglas de la sana critica. La referencia de la plantilla al 'art. 827 inc. t' requiere verificacion contra el texto vigente del CPCC bonaerense, porque el art. 827 del texto oficial actual corresponde a disposiciones transitorias.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Codigo Procesal Civil y Comercial de la Provincia de Buenos Aires",
+            "url": "https://normas.gba.gob.ar/documentos/VrQlgSOB.html",
+            "summary": "Codigo procesal aplicable en la Provincia de Buenos Aires para los procesos civiles y comerciales. Regula competencia, medidas cautelares, actividad probatoria, reserva de actuaciones y otras reglas procedimentales usadas como sustento formal de decisiones urgentes."
+          },
+          "template_excerpt": "arts. 232, 384, 827 -inc. t- del Codigo Procesal"
+        },
+        {
+          "id_suffix": "pacto_sjcr_art5_19_25",
+          "law": "Pacto de San Jose de Costa Rica (Ley 23.054)",
+          "article": "5, 19 y 25",
+          "title": "Pacto de San Jose de Costa Rica arts. 5, 19 y 25",
+          "summary": "El art. 5 reconoce el derecho a la integridad personal fisica, psiquica y moral. El art. 19 establece que todo niño tiene derecho a medidas de proteccion especiales por parte de su familia, la sociedad y el Estado. El art. 25 garantiza el derecho a un recurso sencillo y rapido y a la tutela judicial efectiva frente a violaciones de derechos.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Convencion Americana sobre Derechos Humanos aprobada por Ley 23.054",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/28152/norma.htm",
+            "summary": "Texto oficial de la Convencion Americana sobre Derechos Humanos. Reconoce derechos fundamentales y garantias judiciales, entre ellas la integridad personal, la proteccion de niños, niñas y adolescentes y el derecho a la tutela judicial efectiva."
+          },
+          "template_excerpt": "arts. 5, 19 y 25 del Pacto de San Jose de Costa Rica -ley 23.054-"
+        },
+        {
+          "id_suffix": "cn_art75_inc22",
+          "law": "Constitucion Nacional",
+          "article": "75 inc. 22",
+          "title": "Constitucion Nacional art. 75 inc. 22",
+          "summary": "Otorga jerarquia superior a las leyes a los tratados y reconoce jerarquia constitucional a un conjunto de tratados de derechos humanos, entre ellos la Convencion Americana sobre Derechos Humanos y la Convencion sobre los Derechos del Niño, en las condiciones de su vigencia.",
+          "official_source": {
+            "institution": "Argentina.gob.ar",
+            "title": "Constitucion Nacional - Ley 24.430",
+            "url": "https://www.argentina.gob.ar/normativa/nacional/ley-24430-804/texto",
+            "summary": "Texto oficial de la Constitucion Nacional Argentina. Entre otras cuestiones, el articulo 75 inciso 22 otorga jerarquia constitucional a determinados tratados internacionales de derechos humanos."
+          },
+          "template_excerpt": "art. 75 -inc.22- de la Constitucion Nacional"
+        },
+        {
+          "id_suffix": "belem_art3_4",
+          "law": "Convencion de Belem do Para (Ley 24.632)",
+          "article": "3 y 4",
+          "title": "Convencion de Belem do Para arts. 3 y 4",
+          "summary": "El art. 3 reconoce a toda mujer el derecho a una vida libre de violencia, tanto en el ambito publico como en el privado. El art. 4 enumera derechos protegidos, entre ellos vida, integridad fisica, psiquica y moral, libertad y seguridad personales, dignidad, igualdad y acceso a recursos sencillos y rapidos ante los tribunales.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Convencion Interamericana para Prevenir, Sancionar y Erradicar la Violencia contra la Mujer - Ley 24.632",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/35000-39999/36208/norma.htm",
+            "summary": "Texto oficial de la Convencion de Belem do Para. Establece el derecho de las mujeres a vivir una vida libre de violencia y fija deberes estatales de prevencion, sancion y erradicacion de la violencia contra la mujer."
+          },
+          "template_excerpt": "arts. 3, 4 y conc. de la Convencion de Belem do Para (ley 24.632)"
+        },
+        {
+          "id_suffix": "cp_art239",
+          "law": "Codigo Penal",
+          "article": "239",
+          "title": "Codigo Penal art. 239",
+          "summary": "Tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones y sirve como apercibimiento frente al incumplimiento de la medida.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Penal de la Nacion Argentina - articulo 239",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16546/texact.htm",
+            "summary": "Texto oficial del Codigo Penal de la Nacion. El articulo 239 tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones, base penal habitual ante el incumplimiento de mandatos judiciales."
+          },
+          "template_excerpt": "dar intervencion al Señor Fiscal en lo Penal que por turno corresponda (art. 239 del Codigo Penal)"
+        },
+        {
+          "id_suffix": "cc_art804",
+          "law": "Codigo Civil",
+          "article": "804",
+          "title": "Codigo Civil art. 804",
+          "summary": "Regula las sanciones conminatorias o astreintes. La referencia correcta corresponde al Codigo Civil y Comercial de la Nacion vigente, cuyo art. 804 autoriza al juez a imponer sanciones pecuniarias para compeler el cumplimiento de sus decisiones.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Civil y Comercial de la Nacion - articulo 804",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/texact.htm",
+            "summary": "Texto oficial del Codigo Civil y Comercial de la Nacion. El articulo 804 regula las sanciones conminatorias pecuniarias o astreintes como herramienta para forzar el cumplimiento de deberes juridicos."
+          },
+          "template_excerpt": "multa conforme lo dispuesto por el art. 804 del Codigo Civil"
+        },
+        {
+          "id_suffix": "ley12569_art8",
+          "law": "Ley 12.569",
+          "article": "8",
+          "title": "Ley 12.569 art. 8",
+          "summary": "Ordena requerir un informe interdisciplinario o transdisciplinario para determinar los daños sufridos por la victima, la situacion de peligro y el medio social y ambiental del grupo familiar. Ese informe debe remitirse rapidamente para que el juzgado pueda adoptar, ampliar o hacer cesar medidas.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "informe transdisciplinario del art. 8 de la Ley 12.569"
+        },
+        {
+          "id_suffix": "ccycn_art41_42",
+          "law": "CCyCN",
+          "article": "41 y 42",
+          "title": "CCyCN arts. 41 y 42",
+          "summary": "El art. 41 regula la internacion sin consentimiento y exige recaudos estrictos. El art. 42 habilita a la autoridad publica a disponer el traslado de una persona cuyo estado no admita demora hacia un centro de salud para su evaluacion e internacion, si correspondiera, con control judicial posterior. Son normas utiles en contextos de riesgo cierto e inminente.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Civil y Comercial de la Nacion - articulos 41 y 42",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/texact.htm",
+            "summary": "Texto oficial del Codigo Civil y Comercial de la Nacion. Los articulos 41 y 42 regulan la internacion sin consentimiento y la intervencion judicial o administrativa en situaciones de riesgo, dentro del regimen de capacidad y proteccion de la persona."
+          },
+          "template_excerpt": "en los terminos de los arts 41 y 42 del CCyCN y normas complementarias"
+        },
+        {
+          "id_suffix": "res_scba_3211_13",
+          "law": "Res. SCBA 3211/13",
+          "article": "",
+          "title": "Resolucion SCBA 3211/13",
+          "summary": "Aprueba la utilizacion en organismos jurisdiccionales de formularios estandarizados para diversas medidas, entre ellas exclusion del hogar y perimetro de restriccion, y se vincula con la comunicacion de esas medidas a los registros y organismos pertinentes.",
+          "official_source": {
+            "institution": "Suprema Corte de Justicia de la Provincia de Buenos Aires",
+            "title": "Resolucion 3211/13",
+            "url": "https://www.scba.gov.ar/paginas.asp?id=28374",
+            "summary": "Resolucion administrativa de la Suprema Corte bonaerense que aprueba el uso de formularios estandarizados para determinadas medidas y comunicaciones judiciales, incluyendo actuaciones vinculadas con violencia familiar, con fines de registracion y gestion uniforme."
+          },
+          "template_excerpt": "Res. SCBA 3211/13"
+        }
+      ]
+    },
+    {
+      "template_id": "medida_impedimento_contacto",
+      "measure_type": "impedimento_contacto",
+      "title": "Plantilla de impedimento de contacto por toda via",
+      "summary": "Modelo base de resolucion para restriccion de acercamiento, cese de actos violentos y prohibicion de contacto.",
+      "template_file": "medida_impedimento_contacto.pdf",
+      "jurisdiction": "Provincia de Buenos Aires",
+      "legal_references": [
+        {
+          "id_suffix": "ley12569_art3_5_7_11_12",
+          "law": "Ley 12.569",
+          "article": "3, 5, 7, 11 y 12",
+          "title": "Ley 12.569 arts. 3, 5, 7, 11 y 12",
+          "summary": "El art. 3 regula quienes pueden denunciar. El art. 5 habilita la denuncia directa por menores e incapaces victimas. El art. 7 enumera medidas urgentes de proteccion para evitar la repeticion de la violencia. El art. 11 ordena audiencias separadas y el art. 12 exige fijar plazo y eventual prorroga de la medida.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569"
+        },
+        {
+          "id_suffix": "decreto2875_05_art5",
+          "law": "Decreto 2875/05",
+          "article": "5",
+          "title": "Decreto 2875/05 art. 5",
+          "summary": "Complementa la ley en materia de acceso a la denuncia, recepcion obligatoria en comisaria y derivacion inmediata a la autoridad judicial competente.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Decreto 2875/05 reglamentario de la Ley 12.569 - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/BK6XKuox.html",
+            "summary": "Decreto reglamentario de la Ley 12.569. Precisa pautas operativas para la recepcion, derivacion y tramitacion de denuncias, la intervencion de organismos administrativos y judiciales y la articulacion de la red de asistencia y proteccion."
+          },
+          "template_excerpt": "art. 5 del Dec. 2875/05 y conc."
+        },
+        {
+          "id_suffix": "cdn_art3_9",
+          "law": "Convencion sobre los Derechos del Nino",
+          "article": "3 y 9",
+          "title": "CDN arts. 3 y 9",
+          "summary": "El art. 3 dispone que en todas las medidas concernientes a niños debe atenderse primordialmente a su interes superior. El art. 9 protege el derecho del niño a no ser separado de sus padres contra la voluntad de estos, salvo decision competente fundada en su interes superior, y reconoce el derecho a mantener relaciones personales y contacto directo salvo que ello sea contrario a ese interes.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Convencion sobre los Derechos del Niño aprobada por Ley 23.849",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=249",
+            "summary": "Texto oficial de la Convencion sobre los Derechos del Niño. Reconoce el interes superior del niño, el derecho a la proteccion integral y pautas para la separacion del medio familiar solo bajo control legal y cuando resulte necesario para su interes superior."
+          },
+          "template_excerpt": "ello en virtud del interes superior del nino (arts. 3 y 9 de la CDN)"
+        },
+        {
+          "id_suffix": "cp_art239",
+          "law": "Codigo Penal",
+          "article": "239",
+          "title": "Codigo Penal art. 239",
+          "summary": "Tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones y sirve como apercibimiento frente al incumplimiento de la medida.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Penal de la Nacion Argentina - articulo 239",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16546/texact.htm",
+            "summary": "Texto oficial del Codigo Penal de la Nacion. El articulo 239 tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones, base penal habitual ante el incumplimiento de mandatos judiciales."
+          },
+          "template_excerpt": "dar intervencion al Juez Penal (art. 239 del C. Penal)"
+        },
+        {
+          "id_suffix": "cc_art804",
+          "law": "Codigo Civil",
+          "article": "804",
+          "title": "Codigo Civil art. 804",
+          "summary": "Regula las sanciones conminatorias o astreintes. La referencia correcta corresponde al Codigo Civil y Comercial de la Nacion vigente, cuyo art. 804 autoriza al juez a imponer sanciones pecuniarias para compeler el cumplimiento de sus decisiones.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Civil y Comercial de la Nacion - articulo 804",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/texact.htm",
+            "summary": "Texto oficial del Codigo Civil y Comercial de la Nacion. El articulo 804 regula las sanciones conminatorias pecuniarias o astreintes como herramienta para forzar el cumplimiento de deberes juridicos."
+          },
+          "template_excerpt": "multa conforme lo dispuesto por el art. 804 del C. Civil"
+        },
+        {
+          "id_suffix": "ley12569_art8",
+          "law": "Ley 12.569",
+          "article": "8",
+          "title": "Ley 12.569 art. 8",
+          "summary": "Ordena requerir un informe interdisciplinario o transdisciplinario para determinar daños, situacion de peligro y medio social y ambiental del grupo familiar, de modo de orientar la adopcion, ampliacion o cese de medidas.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "informe transdisciplinario del art. 8 de la Ley 12.569"
+        },
+        {
+          "id_suffix": "cpcc_art196_197",
+          "law": "CPCC Buenos Aires",
+          "article": "196 y 197",
+          "title": "CPCC Buenos Aires arts. 196 y 197",
+          "summary": "El art. 196 regula la validez de medidas precautorias dictadas por juez incompetente sin prorrogar su competencia. El art. 197 permite ofrecer y ratificar informaciones sumarias para obtener medidas precautorias con tramite abreviado.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Codigo Procesal Civil y Comercial de la Provincia de Buenos Aires",
+            "url": "https://normas.gba.gob.ar/documentos/VrQlgSOB.html",
+            "summary": "Codigo procesal aplicable en la Provincia de Buenos Aires para los procesos civiles y comerciales. Regula competencia, medidas cautelares, actividad probatoria, reserva de actuaciones y otras reglas procedimentales usadas como sustento formal de decisiones urgentes."
+          },
+          "template_excerpt": "reserva (art. 196 del C.P.C.C.) y resérvese en Secretaría (conf. ar. 197 del Cod. Procesal)"
+        },
+        {
+          "id_suffix": "acuerdo3397_art41_inc_b",
+          "law": "Acuerdo N°3397",
+          "article": "41 inc. B",
+          "title": "Acuerdo N°3397 art. 41 inc. B",
+          "summary": "Regula la asignacion por conexidad automatica de causas iniciadas ante el Fuero de Familia. Si existen peticiones anteriores de alguna de las partes, el sistema asigna automaticamente al organo del Fuero de Familia que hubiera prevenido; el propio articulo agrega una regla especifica para denuncias de violencia familiar.",
+          "official_source": {
+            "institution": "Suprema Corte de Justicia de la Provincia de Buenos Aires",
+            "title": "Acuerdo 3397 - Reglamento sobre el Regimen de Receptorias de Expedientes, Archivos del Poder Judicial y Mandamientos y Notificaciones",
+            "url": "https://www.scba.gov.ar/informacion/AC%203397.pdf",
+            "summary": "Acuerdo reglamentario de la Suprema Corte bonaerense sobre receptorias, archivos judiciales, mandamientos y notificaciones. Contiene reglas de asignacion, conexidad y radicacion de causas, incluidas previsiones especificas para el fuero de familia y denuncias de violencia familiar."
+          },
+          "template_excerpt": "Art. 41 inc B del Acuerdo N°3397"
+        },
+        {
+          "id_suffix": "res_scba_3211_13",
+          "law": "Res. SCBA 3211/13",
+          "article": "",
+          "title": "Resolucion SCBA 3211/13",
+          "summary": "Aprueba la utilizacion de formularios estandarizados para medidas como exclusion del hogar y perimetro de restriccion, y opera como base administrativa para su remision y registracion.",
+          "official_source": {
+            "institution": "Suprema Corte de Justicia de la Provincia de Buenos Aires",
+            "title": "Resolucion 3211/13",
+            "url": "https://www.scba.gov.ar/paginas.asp?id=28374",
+            "summary": "Resolucion administrativa de la Suprema Corte bonaerense que aprueba el uso de formularios estandarizados para determinadas medidas y comunicaciones judiciales, incluyendo actuaciones vinculadas con violencia familiar, con fines de registracion y gestion uniforme."
+          },
+          "template_excerpt": "Res. SCBA 3211/13"
+        }
+      ]
+    },
+    {
+      "template_id": "medida_abstencion_violencia",
+      "measure_type": "abstencion_violencia",
+      "title": "Plantilla de abstencion de actos de violencia",
+      "summary": "Modelo base de resolucion para cese y abstencion de actos de violencia por toda via de contacto.",
+      "template_file": "medida_abstencion_violencia.txt",
+      "jurisdiction": "Provincia de Buenos Aires",
+      "legal_references": [
+        {
+          "id_suffix": "ley12569_art3_5_7_11_12",
+          "law": "Ley 12.569",
+          "article": "3, 5, 7, 11 y 12",
+          "title": "Ley 12.569 arts. 3, 5, 7, 11 y 12",
+          "summary": "El art. 3 regula quienes pueden denunciar. El art. 5 habilita la denuncia directa por menores e incapaces victimas. El art. 7 enumera medidas urgentes de proteccion para evitar la repeticion de la violencia. El art. 11 ordena audiencias separadas y el art. 12 exige fijar plazo y eventual prorroga de la medida.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569"
+        },
+        {
+          "id_suffix": "decreto2875_05_art5",
+          "law": "Decreto 2875/05",
+          "article": "5",
+          "title": "Decreto 2875/05 art. 5",
+          "summary": "Complementa la ley en materia de acceso a la denuncia, recepcion obligatoria en comisaria y derivacion inmediata a la autoridad judicial competente.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Decreto 2875/05 reglamentario de la Ley 12.569 - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/BK6XKuox.html",
+            "summary": "Decreto reglamentario de la Ley 12.569. Precisa pautas operativas para la recepcion, derivacion y tramitacion de denuncias, la intervencion de organismos administrativos y judiciales y la articulacion de la red de asistencia y proteccion."
+          },
+          "template_excerpt": "art. 5 del Dec. 2875/05 y conc."
+        },
+        {
+          "id_suffix": "cpcc_art196_197",
+          "law": "CPCC Buenos Aires",
+          "article": "196 y 197",
+          "title": "CPCC Buenos Aires arts. 196 y 197",
+          "summary": "El art. 196 regula la validez de medidas precautorias dictadas por juez incompetente sin prorrogar su competencia. El art. 197 permite ofrecer y ratificar informaciones sumarias para obtener medidas precautorias con tramite abreviado.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Codigo Procesal Civil y Comercial de la Provincia de Buenos Aires",
+            "url": "https://normas.gba.gob.ar/documentos/VrQlgSOB.html",
+            "summary": "Codigo procesal aplicable en la Provincia de Buenos Aires para los procesos civiles y comerciales. Regula competencia, medidas cautelares, actividad probatoria, reserva de actuaciones y otras reglas procedimentales usadas como sustento formal de decisiones urgentes."
+          },
+          "template_excerpt": "art. 196 del C.P.C.C. y art. 197 del Cod. Procesal"
+        },
+        {
+          "id_suffix": "cp_art239",
+          "law": "Codigo Penal",
+          "article": "239",
+          "title": "Codigo Penal art. 239",
+          "summary": "Tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones y sirve como apercibimiento frente al incumplimiento de la medida.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Penal de la Nacion Argentina - articulo 239",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/15000-19999/16546/texact.htm",
+            "summary": "Texto oficial del Codigo Penal de la Nacion. El articulo 239 tipifica la resistencia o desobediencia a un funcionario publico en el ejercicio legitimo de sus funciones, base penal habitual ante el incumplimiento de mandatos judiciales."
+          },
+          "template_excerpt": "dar intervencion al Sr. Fiscal en lo Penal que por turno corresponda (art. 239 del C. Penal)"
+        },
+        {
+          "id_suffix": "cc_art804",
+          "law": "Codigo Civil",
+          "article": "804",
+          "title": "Codigo Civil art. 804",
+          "summary": "Regula las sanciones conminatorias o astreintes. La referencia correcta corresponde al Codigo Civil y Comercial de la Nacion vigente, cuyo art. 804 autoriza al juez a imponer sanciones pecuniarias para compeler el cumplimiento de sus decisiones.",
+          "official_source": {
+            "institution": "InfoLEG",
+            "title": "Codigo Civil y Comercial de la Nacion - articulo 804",
+            "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/texact.htm",
+            "summary": "Texto oficial del Codigo Civil y Comercial de la Nacion. El articulo 804 regula las sanciones conminatorias pecuniarias o astreintes como herramienta para forzar el cumplimiento de deberes juridicos."
+          },
+          "template_excerpt": "multa conforme lo dispuesto por el art. 804 del C. Civil"
+        },
+        {
+          "id_suffix": "ley12569_art8_11",
+          "law": "Ley 12.569",
+          "article": "8 y 11",
+          "title": "Ley 12.569 arts. 8 y 11",
+          "summary": "El art. 8 exige un informe interdisciplinario o transdisciplinario para valorar daños y riesgo. El art. 11 dispone audiencias separadas dentro de las 48 horas, con comparecencia obligatoria del denunciado, y faculta al juzgado a ratificar, modificar u ordenar medidas.",
+          "official_source": {
+            "institution": "Normas PBA",
+            "title": "Ley 12.569 de Violencia Familiar - texto actualizado",
+            "url": "https://normas.gba.gob.ar/documentos/Vro4LsO0.html",
+            "summary": "Regimen provincial de proteccion contra la violencia familiar. Define el alcance de la violencia familiar, determina quienes pueden denunciar, fija la competencia judicial y habilita medidas preventivas urgentes, informes interdisciplinarios y reglas de seguimiento del caso."
+          },
+          "template_excerpt": "informe transdisciplinario del art. 8 de la Ley 12.569 y cumplimiento con el art. 11"
+        },
+        {
+          "id_suffix": "acuerdo3397_art41_inc_b",
+          "law": "Acuerdo N°3397",
+          "article": "41 inc. B",
+          "title": "Acuerdo N°3397 art. 41 inc. B",
+          "summary": "Regula la asignacion por conexidad automatica de causas iniciadas ante el Fuero de Familia. Si existen peticiones anteriores de alguna de las partes, el sistema asigna automaticamente al organo del Fuero de Familia que hubiera prevenido; el propio articulo agrega una regla especifica para denuncias de violencia familiar.",
+          "official_source": {
+            "institution": "Suprema Corte de Justicia de la Provincia de Buenos Aires",
+            "title": "Acuerdo 3397 - Reglamento sobre el Regimen de Receptorias de Expedientes, Archivos del Poder Judicial y Mandamientos y Notificaciones",
+            "url": "https://www.scba.gov.ar/informacion/AC%203397.pdf",
+            "summary": "Acuerdo reglamentario de la Suprema Corte bonaerense sobre receptorias, archivos judiciales, mandamientos y notificaciones. Contiene reglas de asignacion, conexidad y radicacion de causas, incluidas previsiones especificas para el fuero de familia y denuncias de violencia familiar."
+          },
+          "template_excerpt": "Art. 41 inc B del Acuerdo N°3397"
+        }
+      ]
+    }
+  ]
+}

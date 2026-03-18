@@ -1,0 +1,12 @@
+project:
+  name: violence_judicial_files_classification
+  language: es
+
+pipeline:
+  abstention_min_citations: 1
+  alert_min_citations: 2
+
+paths:
+  corpus: data/corpus
+  processed: data/processed
+  index: data/index

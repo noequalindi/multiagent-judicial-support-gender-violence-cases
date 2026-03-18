@@ -1,0 +1,18 @@
+name: violence-judicial-ai
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - tesseract
+  - poppler
+  - pip:
+      - fastapi>=0.115.0
+      - httpx>=0.27.0
+      - jsonschema>=4.22.0
+      - pydantic>=2.7.0
+      - python-dotenv>=1.0.1
+      - python-multipart>=0.0.9
+      - streamlit>=1.40.0
+      - uvicorn>=0.30.0
