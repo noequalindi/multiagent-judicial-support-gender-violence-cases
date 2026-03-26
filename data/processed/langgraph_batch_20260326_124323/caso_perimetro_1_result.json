@@ -1,0 +1,272 @@
+{
+  "case_id": "FVOO002452-0047064/2026",
+  "extracted_case": {
+    "case_id": "FVOO002452-0047064/2026",
+    "anonymized_text": "(>\nE EN 1\nE Ñ Md [PERSONA_REDACTED] [DOMICILIO_REDACTED]\nas A [PERSONA_REDACTED] ros\nN' de VG: [ID_REDACTED]-[DNI_REDACTED]/2026]| PP: |\n[PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y/O VIOL! [PERSONA_REDACTED] [PERSONA_REDACTED]\nRelato del hecho\nRelato\n[PERSONA_REDACTED]:\nA A A A\n[PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] 08 [PERSONA_REDACTED] [PERSONA_REDACTED] (20). [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED]. [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y IBA A [PERSONA_REDACTED] [PERSONA_REDACTED] O [PERSONA_REDACTED]\n[PERSONA_REDACTED]. [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED].\n[PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] HOSTIGANDO A [PERSONA_REDACTED] [PERSONA_REDACTED] MENTADA. [PERSONA_REDACTED] [PERSONA_REDACTED]\n[PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED].-\nDatos probatorios\nDatos probatorios\n\n[PERSONA_REDACTED]\n\n¿Aporta documentación en este acto? No\n\n¿Aporta efectos en este acto? No\n\nAdjuntos - Evidencias\n[[PERSONA_REDACTED] nO A A\n\n \nEscaneado con CamScanner\n\n, A PROVINCIA [DOMICILIO_REDACTED]\nES E [PERSONA_REDACTED] Se,\nA A [PERSONA_REDACTED]\nN* de VG: [ID_REDACTED]-[DNI_REDACTED]/2026 | PP:\n[PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED]\n\nEl presente integra y es el extracto de la denuncia formulada en el día de la fecha, cuyo contenido es leído y ratificado por la/s persona/s denunciante/s\n\nLa persona compareciente ha sido impuesta de las penas con que la ley dunas al/la falso/a denunciante a tenor de los art, 245 y 275 del Código Penal, y\n\nprestado juramento (o promesa) de decir verdad de todo lo que suplere, manifestare o la fuero preguntado,\n\nLa/el denunciante solicita que se envíe esta denuncia al medio digital seleccionado, en caso de requerirse se entre[DOMICILIO_REDACTED]\n\nsaber los derechos que le asisten, transcribiéndolos en la denuncia que se le envía al medio digital seleccionado\n\nA pr\npo, e ul e, Ñ |\nMed xs - »\n$ e $ % — MOREYRALABRIÑA—\n. : suB NTE\n+ pel AA\n| | 17 Tall y ls? A SOLA A\n— Nombre: | 2Q Aaa Jocs RMB” e encionario:[PERSONA_REDACTED] ANGELES\n— Apellido: Jerarquia: SUBTENIENTE (E.G.)\n32. 4900 ¡\n— Documento: JC“. S Legajo: 181501\n2? [-Mos- 8863\n \nEscaneado con CamScanner",
+    "facts": [
+      "Se reportan hechos de hostigamiento."
+    ],
+    "active_measures": [
+      "Evaluar medidas cautelares urgentes"
+    ],
+    "risk_factors": [
+      "Sin factores automaticos concluyentes"
+    ],
+    "timeline": [
+      "Ingreso de denuncia",
+      "Evaluacion interdisciplinaria inicial"
+    ]
+  },
+  "retrieval": [
+    {
+      "query": "Se reportan hechos de hostigamiento.",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.383
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "title": "Plantilla de medida de exclusion del hogar",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.383
+        },
+        {
+          "source_id": "medida_impedimento_contacto_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario.Por recibido.En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cauterlar resérvese en Secretarìa (conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normat",
+          "title": "Plantilla de impedimento de contacto por toda via",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.383
+        }
+      ]
+    },
+    {
+      "query": "Evaluar medidas cautelares urgentes",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.8
+        },
+        {
+          "source_id": "medida_perimetro_cpcc_art232",
+          "excerpt": "a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC",
+          "title": "CPCC Buenos Aires art. 232",
+          "law": "CPCC Buenos Aires",
+          "article": "232",
+          "source_type": "normativa",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.75
+        },
+        {
+          "source_id": "cpcc_pba_art232",
+          "excerpt": "Fuera de los casos previstos en los artículos precedentes, quien tuviere fundado motivo para temer que durante el tiempo anterior al reconocimiento judicial de su derecho, éste pudiere sufrir un perjuicio inminente o irreparable, podrá solicitar las medidas urgentes que, según las circunstancias, fueren más aptas para asegurar provisionalmente el cumplimiento de la sentencia.",
+          "title": "CPCC PBA art. 232 – Medidas cautelares genéricas",
+          "law": "CPCC Buenos Aires",
+          "article": "232",
+          "source_type": "normativa",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.75
+        }
+      ]
+    },
+    {
+      "query": "Sin factores automaticos concluyentes",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.3
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "title": "Plantilla de medida de exclusion del hogar",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.3
+        },
+        {
+          "source_id": "medida_impedimento_contacto_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario.Por recibido.En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cauterlar resérvese en Secretarìa (conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normat",
+          "title": "Plantilla de impedimento de contacto por toda via",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.3
+        }
+      ]
+    },
+    {
+      "query": "Se reportan hechos de hostigamiento. Evaluar medidas cautelares urgentes Sin factores automaticos concluyentes",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.505
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "title": "Plantilla de medida de exclusion del hogar",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.414
+        },
+        {
+          "source_id": "medida_abstencion_violencia_template",
+          "excerpt": "···········Carátula de la Causa.- ··············EXPEDIENTE N° Identificación de la Causa.- ··············REGISTRO N° ......- San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario . Por recibido.- En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cautelar resérvese en Secretarìa ( conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normativa recientemente implementada (Art. 41 inc B del Acuerdo N°3397), acumúle",
+          "title": "Plantilla de abstencion de actos de violencia",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.414
+        }
+      ]
+    }
+  ],
+  "draft": {
+    "decision_draft": "Borrador no vinculante: se sugiere evaluar medidas cautelares urgentes con enfoque de proteccion integral y seguimiento interdisciplinario. Template sugerido: Abstencion de actos de violencia (medida_abstencion_violencia).",
+    "checklist": [
+      "Verificar hechos y medidas vigentes en el expediente digital.",
+      "Confirmar competencia y jurisdiccion.",
+      "Revisar procedencia normativa de cada medida sugerida.",
+      "Completar los placeholders del template con datos del expediente.",
+      "Validar el borrador por operador humano antes de firma."
+    ],
+    "suggested_measures": [
+      "Abstencion de actos de violencia por toda via"
+    ],
+    "selected_template_id": "medida_abstencion_violencia",
+    "selected_template_name": "Abstencion de actos de violencia",
+    "template_text": "RESUELVO: 1) Hacer saber a {{nombre_denunciado}} que debera cesar y/o abstenerse de todo acto violento fisico, psicologico o emocional respecto de {{nombre_denunciante}}, por toda via de contacto posible. 2) Vigencia provisoria por 90 dias, prorrogable.",
+    "fields_to_fill": [
+      "caratula_causa",
+      "expediente_numero",
+      "registro_numero",
+      "fecha_resolucion",
+      "nombre_denunciante",
+      "nombre_denunciado"
+    ],
+    "risk_band": "medium",
+    "abstention": false,
+    "abstention_reason": null,
+    "citations": [
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "title": "Plantilla de prohibicion de acercamiento",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.383
+      },
+      {
+        "source_id": "medida_exclusion_template",
+        "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+        "title": "Plantilla de medida de exclusion del hogar",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.383
+      },
+      {
+        "source_id": "medida_impedimento_contacto_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario.Por recibido.En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cauterlar resérvese en Secretarìa (conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normat",
+        "title": "Plantilla de impedimento de contacto por toda via",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.383
+      },
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "title": "Plantilla de prohibicion de acercamiento",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.8
+      },
+      {
+        "source_id": "medida_perimetro_cpcc_art232",
+        "excerpt": "a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC",
+        "title": "CPCC Buenos Aires art. 232",
+        "law": "CPCC Buenos Aires",
+        "article": "232",
+        "source_type": "normativa",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.75
+      },
+      {
+        "source_id": "cpcc_pba_art232",
+        "excerpt": "Fuera de los casos previstos en los artículos precedentes, quien tuviere fundado motivo para temer que durante el tiempo anterior al reconocimiento judicial de su derecho, éste pudiere sufrir un perjuicio inminente o irreparable, podrá solicitar las medidas urgentes que, según las circunstancias, fueren más aptas para asegurar provisionalmente el cumplimiento de la sentencia.",
+        "title": "CPCC PBA art. 232 – Medidas cautelares genéricas",
+        "law": "CPCC Buenos Aires",
+        "article": "232",
+        "source_type": "normativa",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.75
+      },
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "title": "Plantilla de prohibicion de acercamiento",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.3
+      },
+      {
+        "source_id": "medida_exclusion_template",
+        "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+        "title": "Plantilla de medida de exclusion del hogar",
+        "law": null,
+        "article": null,
+        "source_type": "template",
+        "jurisdiction": "Provincia de Buenos Aires",
+        "relevance_score": 0.3
+      }
+    ]
+  },
+  "alerts": []
+}

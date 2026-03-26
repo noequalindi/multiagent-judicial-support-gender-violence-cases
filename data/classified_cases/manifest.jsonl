@@ -1,0 +1,2 @@
+{"created_at": "2026-03-20T04:22:53.406507+00:00", "case_id": "case-7ce90834", "file_path": "data/classified_cases/20260320T042253Z_case-7ce90834.json", "selected_template_id": "medida_exclusion", "provider": "anthropic", "model": "claude-sonnet-4-6"}
+{"created_at": "2026-03-20T04:34:46.599901+00:00", "case_id": "FVODO02452-0050264/2026", "file_path": "data/classified_cases/20260320T043446Z_FVODO02452-0050264_2026.json", "selected_template_id": "medida_exclusion", "provider": "anthropic", "model": "claude-sonnet-4-6"}

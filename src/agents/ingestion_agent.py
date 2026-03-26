@@ -42,6 +42,14 @@ class IngestionAgent:
                 r"((?:N[°º']?\s*de\s*VG|Formulario Policial|EXPEDIENTE\s*N[°º]?|REGISTRO\s*N[°º]?)\s*[:\-]?\s*)([A-Z0-9\-/\.]+)",
                 r"\1[ID_REDACTED]",
             ),
+            (
+                r"((?:N[°º']?\s*de\s*Denuncia|Nro\.?\s*de\s*Denuncia|Número\s*de\s*Denuncia)\s*[:\-]?\s*)([A-Z0-9\-/\.]+)",
+                r"\1[ID_REDACTED]",
+            ),
+            (
+                r"((?:Pais|Pa[ií]s|Provincia|Partido|Localidad|Calle|Altura|Entre|Piso|Departamento|Lugar Exacto|Descripci[oó]n)\s*[:\-]?\s*)([^\n]{2,120})",
+                r"\1[DOMICILIO_REDACTED]",
+            ),
         ]
         for pattern, repl in replacements:
             text = re.sub(pattern, repl, text, flags=re.I)
@@ -54,6 +62,7 @@ class IngestionAgent:
         text = re.sub(r"\b\d{7,9}\b", "[DNI_REDACTED]", text)
         text = re.sub(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", "[EMAIL_REDACTED]", text)
         text = re.sub(r"\+?\d[\d\s-]{7,}\d", "[PHONE_REDACTED]", text)
+        text = re.sub(r"\b(?:FV|FVO|FVDO|FVODO|EXP|PP)[A-Z0-9\-/]{4,}\b", "[ID_REDACTED]", text, flags=re.I)
         text = re.sub(r"\b(?:[A-Z]{2,}\d{3,}[-/][A-Z0-9]+)\b", "[ID_REDACTED]", text)
         text = re.sub(r"\b(?:[A-Z]{1,4}\d{4,}[-/]\d{2,4})\b", "[ID_REDACTED]", text)
         text = IngestionAgent._redact_form_fields(text)
@@ -66,9 +75,23 @@ class IngestionAgent:
         text = re.sub(r"\n{3,}", "\n\n", text)
         return text
 
+    @staticmethod
+    def _extract_case_id(text: str) -> str:
+        text = text or ""
+        patterns = [
+            r"(?:N[°º']?\s*de\s*Denuncia|Nro\.?\s*de\s*Denuncia|Número\s*de\s*Denuncia)\s*[:\-]?\s*([A-Z0-9\-/\.]+)",
+            r"(?:EXPEDIENTE\s*N[°º]?|Expediente\s*N[°º]?)\s*[:\-]?\s*([A-Z0-9\-/\.]+)",
+            r"\b((?:FV|FVO|FVDO|FVODO|EXP|PP)[A-Z0-9\-/]{4,})\b",
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, text, flags=re.I)
+            if match:
+                return str(match.group(1)).strip()
+        return f"case-{uuid4().hex[:8]}"
+
     def invoke(self, raw_text: str) -> dict:
         return {
-            "case_id": f"case-{uuid4().hex[:8]}",
+            "case_id": self._extract_case_id(raw_text),
             "anonymized_text": self._anonymize(raw_text),
         }
 
@@ -86,6 +109,6 @@ class IngestionAgent:
             ollama_model=ollama_model,
         )
         return {
-            "case_id": f"case-{uuid4().hex[:8]}",
+            "case_id": self._extract_case_id(extracted_text),
             "anonymized_text": self._anonymize(extracted_text),
         }

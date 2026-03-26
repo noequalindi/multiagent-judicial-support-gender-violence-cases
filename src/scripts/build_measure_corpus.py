@@ -7,7 +7,21 @@ from pathlib import Path
 from typing import Any
 
 
+def resolve_catalog_path(path: Path) -> Path:
+    if path.exists():
+        return path
+    alt_paths = [
+        path.with_suffix(".jsonl"),
+        path.with_suffix(".json"),
+    ]
+    for alt_path in alt_paths:
+        if alt_path.exists():
+            return alt_path
+    raise FileNotFoundError(f"Catalog file not found: {path}")
+
+
 def load_catalog(path: Path) -> list[dict[str, Any]]:
+    path = resolve_catalog_path(path)
     data = json.loads(path.read_text(encoding="utf-8"))
     measures = data.get("measures")
     if not isinstance(measures, list):
@@ -96,6 +110,82 @@ def build_reference_record(entry: dict[str, Any], ref: dict[str, Any]) -> dict[s
     }
 
 
+def load_jsonl_rows(path: Path) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            row = json.loads(line)
+            if isinstance(row, dict):
+                rows.append(row)
+    return rows
+
+
+def normalize_external_record(row: dict[str, Any], source_path: Path) -> dict[str, Any]:
+    normalized = dict(row)
+    record_id = str(normalized.get("_id") or normalized.get("doc_id") or "").strip()
+    if not record_id:
+        raise ValueError(f"External legal corpus row without id in {source_path}")
+
+    normalized["_id"] = record_id
+    normalized["source_id"] = str(normalized.get("source_id") or record_id)
+    normalized["text"] = normalize_ws(
+        str(
+            normalized.get("text")
+            or normalized.get("embedding_text")
+            or normalized.get("summary")
+            or ""
+        )
+    )
+    normalized["summary"] = normalize_ws(str(normalized.get("summary", "")))
+    normalized["title"] = normalize_ws(str(normalized.get("title", "")))
+    normalized["law"] = normalize_ws(str(normalized.get("law", "")))
+    normalized["article"] = normalize_ws(str(normalized.get("article", "")))
+    normalized["jurisdiction"] = normalize_ws(str(normalized.get("jurisdiction", "")))
+    normalized["content_status"] = str(normalized.get("content_status") or "external_curated")
+    normalized["source_file"] = str(source_path.relative_to(Path.cwd()))
+
+    official_url = str(normalized.get("official_url", "")).strip()
+    official_source = normalized.get("official_source")
+    if not isinstance(official_source, dict):
+        official_source = {}
+    normalized["official_source"] = {
+        "institution": str(official_source.get("institution", "")).strip(),
+        "title": str(official_source.get("title", normalized.get("title", ""))).strip(),
+        "url": str(official_source.get("url", official_url)).strip(),
+    }
+    return normalized
+
+
+def load_external_corpora(paths: list[Path]) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+    for directory in paths:
+        if not directory.exists():
+            continue
+        for jsonl_path in sorted(directory.glob("*.jsonl")):
+            for row in load_jsonl_rows(jsonl_path):
+                normalized = normalize_external_record(row, jsonl_path.resolve())
+                record_id = str(normalized["_id"])
+                if record_id in seen_ids:
+                    raise ValueError(f"Duplicate external corpus id '{record_id}' in {jsonl_path}")
+                seen_ids.add(record_id)
+                rows.append(normalized)
+    return rows
+
+
+def resolve_external_corpus_dirs(root: Path) -> list[Path]:
+    candidates = [
+        root / "data" / "legal" / "normativas",
+        root / "data" / "legal" / "normativa",
+        root / "data" / "legal" / "protocolos",
+        root / "data" / "legal" / "jurisprudencia",
+    ]
+    return [path for path in candidates if path.exists()]
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Build a JSONL corpus for Pinecone from judicial measure templates and legal references."
@@ -130,6 +220,9 @@ def main() -> None:
         rows.append(build_template_record(entry, template_text))
         for ref in entry.get("legal_references", []):
             rows.append(build_reference_record(entry, ref))
+
+    external_dirs = resolve_external_corpus_dirs(root)
+    rows.extend(load_external_corpora(external_dirs))
 
     with open(out_path, "w", encoding="utf-8") as f:
         for row in rows:

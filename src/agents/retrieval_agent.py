@@ -7,6 +7,8 @@ import unicodedata
 from pathlib import Path
 from typing import Any
 
+from src.llm.client_factory import build_json_llm_client
+from src.llm.safety import assert_safe_for_external_llm
 from src.models.contracts import Citation, ExtractedCase, RetrievalResult
 from src.rag.pinecone_client import PineconeConfig, PineconeTextIndexClient
 
@@ -90,8 +92,73 @@ class RetrievalAgent:
             deduped.append(q.strip())
         return deduped[:7]
 
-    def invoke(self, extracted: ExtractedCase) -> list[RetrievalResult]:
+    def _build_query_bundle_with_llm(
+        self,
+        extracted: ExtractedCase,
+        provider: str,
+        model: str | None = None,
+    ) -> list[str]:
+        assert_safe_for_external_llm(extracted)
+        _, client = build_json_llm_client(provider=provider, model=model)
+        system_prompt = (
+            "Sos un asistente juridico argentino. Recibis un caso ya anonimizado. "
+            "Tu unica tarea es proponer consultas de busqueda para recuperar normativa, "
+            "jurisprudencia y criterios de medidas cautelares. "
+            "No inventes hechos y no agregues datos personales. "
+            "Respondé exclusivamente en JSON con la clave queries."
+        )
+        user_prompt = json.dumps(
+            {
+                "task": "Generar consultas de recuperacion del marco juridico.",
+                "case": {
+                    "case_id": extracted.case_id,
+                    "anonymized_text": extracted.anonymized_text[:2500],
+                    "facts": extracted.facts,
+                    "active_measures": extracted.active_measures,
+                    "risk_factors": extracted.risk_factors,
+                    "timeline": extracted.timeline,
+                },
+                "instructions": {
+                    "max_queries": 5,
+                    "focus": [
+                        "normativa aplicable",
+                        "medidas cautelares compatibles con los hechos",
+                        "factores de riesgo y urgencia",
+                    ],
+                    "return_json_only": True,
+                },
+            },
+            ensure_ascii=False,
+        )
+        response = client.chat_json(system_prompt=system_prompt, user_prompt=user_prompt)
+        queries = response.get("queries", [])
+        if not isinstance(queries, list):
+            return self._build_query_bundle(extracted)
+
+        seen: set[str] = set()
+        deduped: list[str] = []
+        for item in queries:
+            query = str(item).strip()
+            normalized = query.lower()
+            if not query or normalized in seen:
+                continue
+            seen.add(normalized)
+            deduped.append(query)
+        return deduped[:5] or self._build_query_bundle(extracted)
+
+    def invoke(
+        self,
+        extracted: ExtractedCase,
+        provider: str | None = None,
+        model: str | None = None,
+    ) -> list[RetrievalResult]:
         queries = self._build_query_bundle(extracted)
+        if provider:
+            try:
+                queries = self._build_query_bundle_with_llm(extracted, provider=provider, model=model)
+            except Exception:
+                # Keep retrieval resilient: use the local deterministic query bundle.
+                queries = self._build_query_bundle(extracted)
         results: list[RetrievalResult] = []
         for q in queries:
             hits = self._search_with_pinecone_or_fallback(q)
@@ -112,6 +179,11 @@ class RetrievalAgent:
                         Citation(
                             source_id=str(source_id),
                             excerpt=str(excerpt),
+                            title=str(fields.get("title", "")).strip() or None,
+                            law=str(fields.get("law", "")).strip() or None,
+                            article=str(fields.get("article", "")).strip() or None,
+                            source_type=str(fields.get("source_type", "")).strip() or None,
+                            jurisdiction=str(fields.get("jurisdiction", "")).strip() or None,
                             relevance_score=max(0.0, min(1.0, score)),
                         )
                     )
@@ -139,6 +211,11 @@ class RetrievalAgent:
                 Citation(
                     source_id=str(doc.get("_id") or doc.get("source_id") or "local_record"),
                     excerpt=excerpt,
+                    title=str(doc.get("title", "")).strip() or None,
+                    law=str(doc.get("law", "")).strip() or None,
+                    article=str(doc.get("article", "")).strip() or None,
+                    source_type=str(doc.get("source_type", "")).strip() or None,
+                    jurisdiction=str(doc.get("jurisdiction", "")).strip() or None,
                     relevance_score=round(max(0.0, min(1.0, score)), 3),
                 )
             )

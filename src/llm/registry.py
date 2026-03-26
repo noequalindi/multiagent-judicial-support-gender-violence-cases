@@ -15,6 +15,14 @@ class ProviderSpec:
 
 
 PROVIDER_SPECS: dict[str, ProviderSpec] = {
+    "anthropic": ProviderSpec(
+        provider="anthropic",
+        label="Anthropic Claude",
+        env_prefix="ANTHROPIC",
+        default_base_url="https://api.anthropic.com/v1",
+        default_model="claude-sonnet-4-6",
+        default_models=("claude-sonnet-4-6", "claude-3-7-sonnet-latest", "claude-3-5-sonnet-latest"),
+    ),
     "openai": ProviderSpec(
         provider="openai",
         label="OpenAI",
@@ -72,9 +80,10 @@ def provider_options() -> list[dict[str, object]]:
 
 def ocr_options() -> dict[str, object]:
     ollama_models = _csv_env(
-        "OLLAMA_AVAILABLE_MODELS",
-        ("llama3.2-vision", "qwen2.5-vl:7b"),
+        "VISION_MODELS",
+        tuple(_csv_env("OLLAMA_AVAILABLE_MODELS", ("minicpm-v:8b", "mistral-small3.1", "qwen2.5-vl:7b", "qwen3-vl:8b"))),
     )
+    default_ollama_model = os.getenv("OLLAMA_MODEL", "").strip() or (ollama_models[0] if ollama_models else "minicpm-v:8b")
     return {
         "backends": [
             {"value": "tesseract", "label": "Tesseract"},
@@ -83,5 +92,5 @@ def ocr_options() -> dict[str, object]:
         "tesseract_lang": os.getenv("TESSERACT_LANG", "spa").strip() or "spa",
         "ollama_models": ollama_models,
         "default_backend": os.getenv("OCR_BACKEND", "tesseract").strip() or "tesseract",
-        "default_ollama_model": os.getenv("OLLAMA_MODEL", "llama3.2-vision").strip() or "llama3.2-vision",
+        "default_ollama_model": default_ollama_model,
     }

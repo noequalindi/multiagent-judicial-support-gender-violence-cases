@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 
 from src.llm.measure_classifier import MeasureClassifierService
 from src.llm.registry import ocr_options, provider_options
+from src.logging import get_logger
 from src.models.contracts import MeasureClassification
 from src.orchestration.orchestrator import JudicialOrchestrator
 from src.scripts.generate_measure_document import (
@@ -17,10 +18,13 @@ from src.scripts.generate_measure_document import (
     text_to_simple_pdf,
 )
 from src.storage.mongo_store import MongoRunStore, build_run_payload
+from src.storage.local_json_store import LocalClassificationStore, build_classified_case_payload
 
 
 app = FastAPI(title="Violence Judicial Assistant API", version="0.1.0")
 mongo_store = MongoRunStore()
+local_classification_store = LocalClassificationStore()
+api_logger = get_logger("api")
 
 
 def _raise_api_error(exc: Exception, status_code: int = 500) -> None:
@@ -66,8 +70,10 @@ def ocr_runtime_options() -> dict[str, object]:
 @app.post("/process-text", response_model=ProcessTextResponse)
 def process_text(payload: ProcessTextRequest) -> ProcessTextResponse:
     try:
+        api_logger.info("process_text_start")
         orchestrator = JudicialOrchestrator()
         result = orchestrator.run(payload.text)
+        api_logger.info("process_text_done case_id={}", result.case_id)
         mongo_store.save_run(
             build_run_payload(route="/process-text", pipeline_result=result.model_dump())
         )
@@ -75,6 +81,7 @@ def process_text(payload: ProcessTextRequest) -> ProcessTextResponse:
     except HTTPException:
         raise
     except Exception as exc:
+        api_logger.exception("process_text_error error={}", exc)
         mongo_store.save_run(build_run_payload(route="/process-text", error=str(exc)))
         _raise_api_error(exc)
 
@@ -82,8 +89,17 @@ def process_text(payload: ProcessTextRequest) -> ProcessTextResponse:
 @app.post("/classify-measure", response_model=MeasureClassification)
 def classify_measure(payload: ClassifyMeasureRequest) -> MeasureClassification:
     try:
+        api_logger.info(
+            "classify_measure_start provider={} model={}",
+            payload.provider,
+            payload.model or "-",
+        )
         orchestrator = JudicialOrchestrator()
-        result = orchestrator.run(payload.text)
+        result = orchestrator.run_with_retrieval_provider(
+            payload.text,
+            retrieval_provider=payload.provider,
+            retrieval_model=payload.model,
+        )
         service = MeasureClassifierService()
         classification = service.classify(
             extracted=result.extracted_case,
@@ -91,6 +107,27 @@ def classify_measure(payload: ClassifyMeasureRequest) -> MeasureClassification:
             provider=payload.provider,
             model=payload.model,
             include_draft=payload.include_draft,
+        )
+        api_logger.info(
+            "classify_measure_done case_id={} provider={} model={} template={}",
+            result.case_id,
+            payload.provider,
+            classification.model,
+            classification.selected_template_id,
+        )
+        local_classification_store.save_case(
+            build_classified_case_payload(
+                route="/classify-measure",
+                filename=None,
+                ocr_backend=None,
+                tesseract_lang=None,
+                ollama_model=None,
+                provider=payload.provider,
+                model=classification.model,
+                pipeline_result=result.model_dump(),
+                classification=classification.model_dump(),
+            ),
+            case_id=result.case_id,
         )
         mongo_store.save_run(
             build_run_payload(
@@ -105,6 +142,12 @@ def classify_measure(payload: ClassifyMeasureRequest) -> MeasureClassification:
     except HTTPException:
         raise
     except Exception as exc:
+        api_logger.exception(
+            "classify_measure_error provider={} model={} error={}",
+            payload.provider,
+            payload.model or "-",
+            exc,
+        )
         mongo_store.save_run(
             build_run_payload(
                 route="/classify-measure",
@@ -132,12 +175,21 @@ async def classify_measure_pdf(
         tmp_path = Path(tmp.name)
 
     try:
+        api_logger.info(
+            "classify_measure_pdf_start filename={} provider={} model={} ocr_backend={}",
+            file.filename,
+            provider,
+            model or "-",
+            ocr_backend,
+        )
         orchestrator = JudicialOrchestrator()
-        result = orchestrator.run_from_pdf(
+        result = orchestrator.run_from_pdf_with_retrieval_provider(
             pdf_path=tmp_path,
             ocr_backend=ocr_backend,
             tesseract_lang=tesseract_lang,
             ollama_model=ollama_model,
+            retrieval_provider=provider,
+            retrieval_model=model,
         )
         service = MeasureClassifierService()
         classification = service.classify(
@@ -146,6 +198,28 @@ async def classify_measure_pdf(
             provider=provider,
             model=model,
             include_draft=include_draft,
+        )
+        api_logger.info(
+            "classify_measure_pdf_done case_id={} filename={} provider={} model={} template={}",
+            result.case_id,
+            file.filename,
+            provider,
+            classification.model,
+            classification.selected_template_id,
+        )
+        local_classification_store.save_case(
+            build_classified_case_payload(
+                route="/classify-measure-pdf",
+                filename=file.filename,
+                ocr_backend=ocr_backend,
+                tesseract_lang=tesseract_lang,
+                ollama_model=ollama_model,
+                provider=provider,
+                model=classification.model,
+                pipeline_result=result.model_dump(),
+                classification=classification.model_dump(),
+            ),
+            case_id=result.case_id,
         )
         mongo_store.save_run(
             build_run_payload(
@@ -164,6 +238,13 @@ async def classify_measure_pdf(
     except HTTPException:
         raise
     except Exception as exc:
+        api_logger.exception(
+            "classify_measure_pdf_error filename={} provider={} model={} error={}",
+            file.filename,
+            provider,
+            model or "-",
+            exc,
+        )
         mongo_store.save_run(
             build_run_payload(
                 route="/classify-measure-pdf",

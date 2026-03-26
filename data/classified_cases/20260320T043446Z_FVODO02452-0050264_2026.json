@@ -1,0 +1,89 @@
+{
+  "provider": "anthropic",
+  "model": "claude-sonnet-4-6",
+  "selected_template_id": "medida_exclusion",
+  "selected_template_name": "Exclusion del hogar + restriccion de acercamiento",
+  "rationale": "La denunciante, mujer de nacionalidad paraguaya, ama de casa sin ingresos propios declarados, conviviente con dos hijos menores de edad (de aproximadamente 4 y 11 años), denuncia haber sido víctima de agresiones físicas y amenazas por parte del denunciado. El formulario de denuncia consigna acceso reportado a arma, presencia de menores convivientes expuestos a la violencia, separación reciente o en trámite, y acoso reciente o posible quebrantamiento de orden previa. La víctima presenta factores de vulnerabilidad adicionales: pertenencia a comunidad migrante, ausencia de red vincular declarada, y dependencia económica del agresor. La información disponible en el expediente presenta redacciones parcialmente ilegibles o redactadas, lo que limita la reconstrucción completa del relato; no obstante, los indicadores estructurales relevados son suficientes para fundar una propuesta de medida cautelar urgente de riesgo alto. La concurrencia de agresiones físicas con lesiones, amenazas, acceso reportado a arma y presencia de menores convivientes expuestos a la violencia configura un cuadro de riesgo alto conforme al Protocolo de Valoración de Riesgo en Violencia Familiar. A ello se suma la condición de vulnerabilidad estructural de la víctima: migrante, sin red vincular declarada, sin ingresos propios y en situación de separación reciente, circunstancias que incrementan el riesgo de escalada violenta. En este contexto, la medida de exclusión del hogar resulta la respuesta cautelar más adecuada para cesar la convivencia forzada y proteger tanto a la denunciante como a los menores. La prohibición de acercamiento perimetral complementa dicha exclusión, extendiendo la protección más allá del domicilio. Ambas medidas encuentran sustento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569, en el art. 26 incs. a.1), a.2), a.3) y b.3) de la Ley 26.485, y en el precedente jurisprudencial obrante en autos (fallo_001) que confirma la procedencia de exclusión más perímetro ante violencia física con lesiones, amenazas, arma y menores convivientes. La medida reviste carácter cautelar urgente, no implica pronunciamiento sobre autoría y basta la mera sospecha de maltrato para su dictado, conforme doctrina judicial consolidada receptada en las plantillas del juzgado.",
+  "confidence": 0.0,
+  "supporting_source_ids": [
+    "medida_abstencion_violencia_template",
+    "ley_26485_art26",
+    "fallo_001",
+    "fallo_001",
+    "medida_exclusion_template",
+    "ley_26485_art26",
+    "medida_abstencion_violencia_template",
+    "fallo_001"
+  ],
+  "suggested_measures": [
+    "exclusion",
+    "perimetro"
+  ],
+  "risk_level": "alto",
+  "risk_indicators": [
+    "Amenazas reportadas",
+    "Agresiones físicas o lesiones reportadas",
+    "Acceso reportado a arma",
+    "Menores de edad convivientes involucrados (hijos/as de 4 y 11 años aproximadamente)",
+    "Víctima de nacionalidad extranjera (paraguaya), posible vulnerabilidad por redes de contención reducidas",
+    "Víctima ama de casa sin ingresos propios declarados, posible dependencia económica del denunciado",
+    "Separación reciente o en trámite (indicada en el formulario de denuncia)",
+    "Acoso reciente a la víctima en los últimos 6 meses o quebrantamiento de orden previa (indicado en formulario)"
+  ],
+  "alerts": [],
+  "applicable_articles": [
+    {
+      "ley": "Ley 12.569",
+      "articulo": "Art. 3",
+      "relevancia": "Habilita el dictado de medidas cautelares urgentes ante denuncia de violencia familiar, bastando la mera sospecha de maltrato."
+    },
+    {
+      "ley": "Ley 12.569",
+      "articulo": "Art. 5",
+      "relevancia": "Establece las medidas de protección que puede disponer el juez, incluyendo la exclusión del hogar y la prohibición de acercamiento."
+    },
+    {
+      "ley": "Ley 12.569",
+      "articulo": "Art. 7",
+      "relevancia": "Regula el procedimiento urgente y las facultades del juez para disponer medidas de protección en forma inmediata."
+    },
+    {
+      "ley": "Ley 12.569",
+      "articulo": "Art. 11",
+      "relevancia": "Prevé la intervención del equipo técnico interdisciplinario y la evaluación de riesgo de las partes."
+    },
+    {
+      "ley": "Ley 12.569",
+      "articulo": "Art. 12",
+      "relevancia": "Establece el carácter provisorio y prorrogable de las medidas cautelares dictadas en el marco de la ley."
+    },
+    {
+      "ley": "Ley 26.485",
+      "articulo": "Art. 26, inc. a.1)",
+      "relevancia": "Autoriza ordenar la prohibición de acercamiento del presunto agresor al lugar de residencia, trabajo, estudio y esparcimiento de la víctima."
+    },
+    {
+      "ley": "Ley 26.485",
+      "articulo": "Art. 26, inc. a.2)",
+      "relevancia": "Autoriza ordenar al presunto agresor que cese en los actos de perturbación o intimidación hacia la mujer."
+    },
+    {
+      "ley": "Ley 26.485",
+      "articulo": "Art. 26, inc. a.3)",
+      "relevancia": "Autoriza ordenar la exclusión de la parte agresora de la residencia común, independientemente de la titularidad de la misma."
+    }
+  ],
+  "low_confidence_reason": null,
+  "draft_text": "EXPEDIENTE N° FVODO02452-0050264/2026\nREGISTRO N°: .......\nSan Justo, [Fecha del Sistema].\n[Iniciales del Usuario]\n\nPor recibido. En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter cautelar, resérvese en Secretaría (conf. art. 197 del Cód. Procesal). En virtud de la normativa recientemente implementada (Art. 41 inc. B del Acuerdo N° 3397), acumúlese la denuncia realizada en los presentes.\n\nAUTOS Y VISTOS:\nLa denuncia efectuada por ante la dependencia policial interviniente, de la que surge que la denunciante —mujer de nacionalidad paraguaya, ama de casa, conviviente con dos hijos menores de edad— refiere haber sido víctima de agresiones físicas y amenazas por parte del denunciado, con acceso reportado a arma, en un contexto de separación reciente y con menores convivientes expuestos a la situación de violencia.\n\nY CONSIDERANDO:\n\nI.- Sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del C.P.C.C.), teniendo en cuenta que las resoluciones dictadas en el marco de la presente son despachadas con carácter urgente, por un breve plazo, atendiendo que la finalidad principal de la norma es hacer cesar el denunciado e hipotético riesgo que pesa sobre las presuntas víctimas, poniendo así un paño frío en una escalada de violencia que no se podría lograr de tener que esperar la intervención del Juez natural que corresponda al tipo de conflictiva que la produjo, bastando la mera sospecha de maltrato, por lo que en modo alguno implica una decisión sobre la autoría o no de los hechos atribuidos.\n\nII.- Que de las constancias de autos surge, prima facie, la verosimilitud de los hechos invocados. En efecto, se reportan agresiones físicas con lesiones, amenazas, acceso del denunciado a arma, presencia de menores convivientes expuestos a la violencia, separación reciente o en trámite, y posible acoso o quebrantamiento de orden previa. A ello se añade la situación de vulnerabilidad estructural de la denunciante: pertenencia a comunidad migrante, ausencia de red vincular declarada y dependencia económica del denunciado. Dicho cuadro configura un nivel de riesgo ALTO conforme al Protocolo de Valoración de Riesgo en Violencia Familiar, que orienta la adopción de medidas de exclusión del hogar y prohibición de acercamiento perimetral.\n\nIII.- En función de lo antedicho, con el objetivo de morigerar la escalada de violencia y crear condiciones adecuadas para la evaluación y tratamiento de la conflictiva familiar, fundada prioritariamente en el interés superior de los menores involucrados, y con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569; art. 5° del Dec. 2875/05; arts. 26 incs. a.1), a.2), a.3) y b.3) de la Ley 26.485; arts. 232, 384 y 827 inc. t) del Código Procesal; arts. 5 pto. 1, 19 y 25 pto. 1 del Pacto de San José de Costa Rica (Ley 23.054); art. 75 inc. 22 de la Constitución Nacional; arts. 3, 4 y conc. de la Convención de Belém do Pará (Ley 24.632); y arts. 3 y 9 de la Convención sobre los Derechos del Niño, SE PROPONE RESOLVER:\n\nDisponer provisoriamente, por el plazo de noventa (90) días, susceptible de ser prorrogado en caso de ser necesario por el Juzgado o a pedido de parte, y bajo apercibimiento para el caso de desobediencia o incumplimiento de dar intervención al Señor Fiscal en lo Penal que por turno corresponda (art. 239 del Código Penal) y multa conforme lo dispuesto por el art. 804 del Código Civil, las siguientes medidas:\n\n1°) La EXCLUSIÓN del denunciado del hogar familiar sito en [DOMICILIO REDACTADO], Partido de La Matanza, con la advertencia de que no podrá regresar al mismo, aún vencido dicho plazo, sin orden expresa de este Juzgado, atribuyéndose la vivienda por el tiempo que dure la medida a la denunciante.\n\n2°) La PROHIBICIÓN DE ACERCAMIENTO del denunciado a la persona de la denunciante y a sus hijos menores, hasta un radio de trescientos (300) metros a la redonda del domicilio de la actora, como del lugar de trabajo, estudio y/o esparcimiento de los mismos, por toda vía de contacto posible —incluyendo medios telefónicos, electrónicos y redes sociales—, bajo el apercibimiento indicado.\n\n3°) Otorgar a la denunciante el CUIDADO PERSONAL PROVISORIO de sus hijos menores por el tiempo que dure la medida, sin perjuicio del derecho de comunicación paterno-filial que deberá ser evaluado en la instancia pertinente conforme al interés superior del niño (arts. 3 y 9 de la CDN).\n\n4°) Hacer saber a las partes que deberán concurrir dentro de las cuarenta y ocho (48) horas a los centros especializados en violencia familiar donde sean derivados, previa comunicación a la Mesa Local de Violencia (Sec. Desarrollo Social, Munic. La Matanza), al 4484-2858/7898/7899, o al programa provincial, al 0800-555-0137 (24 hs.), o Dirección de Política de Género Municipal, Rivadavia N° 13.518, Ramos Mejía (4654-7454 int. 137), donde deberán efectuarles el informe transdisciplinario del art. 8 de la Ley 12.569. Acompañado, se fijarán las audiencias pertinentes.\n\n5°) A fin de efectivizar la medida de exclusión dispuesta, líbrese oficio policial con habilitación de días y horas inhábiles, facultando al personal policial a allanar el domicilio denunciado y, en caso de ser necesario, utilizar los servicios de un cerrajero y violentar candados y/o cerraduras, procediendo al cambio de las mismas. En el mismo acto se atribuirá el hogar familiar a la denunciante, quien será designada depositaria de los bienes muebles que se encontraren en la vivienda, respecto de los cuales se realizará un prolijo inventario. Se deja constancia de que el denunciado podrá retirar en el mismo acto sus efectos personales. Asimismo, el personal policial interviniente, en caso de existir riesgo cierto e inminente para la persona del denunciado o para terceros, deberá arbitrar los medios para que se le practique una evaluación psiquiátrica por ante el Hospital Dr. Diego Paroissien, procediendo de acuerdo a los resultados de ella (arts. 41 y 42 del CCyCN y normas complementarias).\n\n6°) Pasen las presentes actuaciones al Equipo Técnico Interdisciplinario a fin de que realice la entrevista correspondiente a la denunciante mediante el medio tecnológico más idóneo, a los fines de la realización de una evaluación de riesgo y en cumplimiento del art. 8 de la Ley 12.569.",
+  "case_id": "FVODO02452-0050264/2026",
+  "created_at": "2026-03-20T04:34:46.597625+00:00",
+  "route": "/classify-measure-pdf",
+  "filename": "caso_exclusion.pdf",
+  "runtime": {
+    "ocr_backend": "tesseract",
+    "tesseract_lang": "spa",
+    "ollama_model": "llama3.2-vision",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6"
+  }
+}

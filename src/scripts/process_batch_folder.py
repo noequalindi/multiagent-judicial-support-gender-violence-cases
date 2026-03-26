@@ -1,126 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import json
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
-from typing import Any
 
-from src.agents.ingestion_agent import IngestionAgent
-from src.orchestration.orchestrator import JudicialOrchestrator
-from src.rag.chunking import chunk_text
-from src.rag.pinecone_client import PineconeConfig, PineconeTextIndexClient
-
-
-@dataclass
-class BatchConfig:
-    input_dir: Path
-    out_dir: Path
-    glob_pattern: str
-    workers: int
-    ocr_backend: str
-    tesseract_lang: str
-    ollama_model: str
-    chunk_size: int
-    overlap: int
-    upsert_pinecone: bool
-    pinecone_batch_size: int
-
-
-def list_pdfs(input_dir: Path, glob_pattern: str) -> list[Path]:
-    files = sorted(input_dir.rglob(glob_pattern))
-    return [p for p in files if p.is_file() and p.suffix.lower() == ".pdf"]
-
-
-def safe_doc_id(root: Path, file_path: Path) -> str:
-    rel = file_path.relative_to(root)
-    stem = rel.with_suffix("").as_posix().replace("/", "__")
-    return stem.replace(" ", "_")
-
-
-def batched(items: list[dict], size: int) -> list[list[dict]]:
-    return [items[i : i + size] for i in range(0, len(items), size)]
-
-
-def to_pinecone_records(
-    chunks: list[str],
-    source_pdf: str,
-    doc_id: str,
-    text_field: str,
-) -> list[dict[str, Any]]:
-    records = []
-    for i, c in enumerate(chunks):
-        cid = f"{doc_id}_{i:04d}"
-        records.append(
-            {
-                "_id": cid,
-                text_field: c,
-                "source_pdf": source_pdf,
-                "source_id": cid,
-                "category": "denuncia",
-            }
-        )
-    return records
-
-
-def process_one_pdf(pdf_path: Path, cfg: BatchConfig) -> dict[str, Any]:
-    doc_id = safe_doc_id(cfg.input_dir, pdf_path)
-    out_base = cfg.out_dir / doc_id
-    ocr_path = out_base.with_name(f"{doc_id}_ocr.txt")
-    chunks_path = out_base.with_name(f"{doc_id}_chunks.jsonl")
-    result_path = out_base.with_name(f"{doc_id}_result.json")
-
-    ingestion = IngestionAgent()
-    orchestrator = JudicialOrchestrator()
-
-    ingest = ingestion.invoke_pdf(
-        pdf_path=pdf_path,
-        ocr_backend=cfg.ocr_backend,
-        tesseract_lang=cfg.tesseract_lang,
-        ollama_model=cfg.ollama_model,
-    )
-    text = ingest["anonymized_text"]
-    chunks = chunk_text(text, chunk_size=cfg.chunk_size, overlap=cfg.overlap)
-    result = orchestrator.run_from_ingest_payload(ingest)
-
-    ocr_path.write_text(text, encoding="utf-8")
-    with open(chunks_path, "w", encoding="utf-8") as f:
-        for i, c in enumerate(chunks):
-            row = {"chunk_id": f"{doc_id}_{i:04d}", "source_pdf": str(pdf_path), "text": c}
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
-    result_path.write_text(json.dumps(result.model_dump(), ensure_ascii=False, indent=2), encoding="utf-8")
-
-    pinecone_upserted = 0
-    pinecone_error = None
-    if cfg.upsert_pinecone:
-        p_cfg = PineconeConfig.from_env()
-        if not p_cfg:
-            pinecone_error = "Pinecone env vars not configured."
-        else:
-            client = PineconeTextIndexClient(p_cfg)
-            records = to_pinecone_records(chunks, str(pdf_path), doc_id, p_cfg.text_field)
-            try:
-                for batch in batched(records, cfg.pinecone_batch_size):
-                    client.upsert_records(batch)
-                    pinecone_upserted += len(batch)
-            except Exception as e:
-                pinecone_error = str(e)
-
-    return {
-        "doc_id": doc_id,
-        "pdf_path": str(pdf_path),
-        "ocr_path": str(ocr_path),
-        "chunks_path": str(chunks_path),
-        "result_path": str(result_path),
-        "chunks": len(chunks),
-        "alerts": result.alerts,
-        "selected_template_id": result.draft.selected_template_id,
-        "pinecone_upserted": pinecone_upserted,
-        "pinecone_error": pinecone_error,
-    }
+from src.orchestration.batch_runner import BatchConfig, list_pdfs, process_one_pdf, write_manifest
 
 
 def main() -> None:
@@ -165,35 +51,25 @@ def main() -> None:
         print("No PDF files found.")
         return
 
-    manifest_path = out_dir / "manifest.jsonl"
-    summary = {"processed": 0, "failed": 0}
+    rows: list[dict[str, object]] = []
 
-    with ThreadPoolExecutor(max_workers=cfg.workers) as executor, open(
-        manifest_path, "w", encoding="utf-8"
-    ) as manifest_file:
+    with ThreadPoolExecutor(max_workers=cfg.workers) as executor:
         futures = {executor.submit(process_one_pdf, pdf, cfg): pdf for pdf in files}
         for future in as_completed(futures):
             pdf = futures[future]
             try:
                 row = future.result()
-                summary["processed"] += 1
-                manifest_file.write(json.dumps({"status": "ok", **row}, ensure_ascii=False) + "\n")
+                rows.append(row)
                 print(f"[OK] {pdf.name} -> template={row['selected_template_id']} chunks={row['chunks']}")
-            except Exception as e:
-                summary["failed"] += 1
-                manifest_file.write(
-                    json.dumps(
-                        {"status": "error", "pdf_path": str(pdf), "error": str(e)},
-                        ensure_ascii=False,
-                    )
-                    + "\n"
-                )
-                print(f"[ERROR] {pdf.name}: {e}")
+            except Exception as exc:
+                error_row = {"status": "error", "pdf_path": str(pdf), "error": str(exc)}
+                rows.append(error_row)
+                print(f"[ERROR] {pdf.name}: {exc}")
 
+    manifest_path, summary = write_manifest(out_dir, rows)
     print(f"Batch done. processed={summary['processed']} failed={summary['failed']}")
     print(f"Manifest: {manifest_path.resolve()}")
 
 
 if __name__ == "__main__":
     main()
-

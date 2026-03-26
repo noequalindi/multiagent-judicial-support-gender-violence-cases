@@ -55,6 +55,13 @@ except Exception:
     llm_runtime_options = {
         "providers": [
             {
+                "provider": "anthropic",
+                "label": "Anthropic Claude",
+                "configured": False,
+                "default_model": "",
+                "models": [],
+            },
+            {
                 "provider": "openai",
                 "label": "OpenAI",
                 "configured": False,
@@ -189,6 +196,7 @@ with tab_draft:
 
 with tab_classify:
     st.subheader("Clasificar medida con LLM")
+    st.caption("El proveedor elegido tambien puede asistir la recuperacion del marco juridico desde el caso anonimizado.")
     classify_pdf = st.file_uploader("Subir denuncia PDF", type=["pdf"], key="classify_pdf")
     include_draft = st.checkbox("Pedir draft al modelo", value=False)
     if st.button("Clasificar medida", use_container_width=True):

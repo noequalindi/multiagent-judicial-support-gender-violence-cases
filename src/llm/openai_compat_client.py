@@ -39,7 +39,15 @@ class OpenAICompatClient:
     def __init__(self, config: OpenAICompatConfig):
         self.config = config
 
-    def chat_json(self, system_prompt: str, user_prompt: str, temperature: float = 0.1) -> dict[str, Any]:
+    def chat_json(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        temperature: float = 0.1,
+        max_tokens: int | None = None,
+        extra_headers: dict[str, str] | None = None,
+        thinking_budget_tokens: int | None = None,
+    ) -> dict[str, Any]:
         payload = {
             "model": self.config.model,
             "messages": [
@@ -49,8 +57,10 @@ class OpenAICompatClient:
             "temperature": temperature,
             "response_format": {"type": "json_object"},
         }
+        if max_tokens is not None:
+            payload["max_tokens"] = max_tokens
 
-        data = self._post_chat(payload)
+        data = self._post_chat(payload, extra_headers=extra_headers)
         content = self._extract_content(data)
         if content is None:
             # Some providers/models reject response_format. Retry with prompt-only JSON instructions.
@@ -62,7 +72,9 @@ class OpenAICompatClient:
                 ],
                 "temperature": temperature,
             }
-            data = self._post_chat(fallback_payload)
+            if max_tokens is not None:
+                fallback_payload["max_tokens"] = max_tokens
+            data = self._post_chat(fallback_payload, extra_headers=extra_headers)
             content = self._extract_content(data)
 
         if not isinstance(content, str) or not content.strip():
@@ -76,13 +88,14 @@ class OpenAICompatClient:
                 raise RuntimeError(f"Provider {self.config.provider} did not return valid JSON.")
             return json.loads(match.group(0))
 
-    def _post_chat(self, payload: dict[str, Any]) -> dict[str, Any]:
+    def _post_chat(self, payload: dict[str, Any], extra_headers: dict[str, str] | None = None) -> dict[str, Any]:
         with httpx.Client(timeout=120.0) as client:
             response = client.post(
                 f"{self.config.base_url}/chat/completions",
                 headers={
                     "Authorization": f"Bearer {self.config.api_key}",
                     "Content-Type": "application/json",
+                    **(extra_headers or {}),
                 },
                 json=payload,
             )
@@ -104,6 +117,7 @@ class OpenAICompatClient:
                         headers={
                             "Authorization": f"Bearer {self.config.api_key}",
                             "Content-Type": "application/json",
+                            **(extra_headers or {}),
                         },
                         json=retry_payload,
                     )

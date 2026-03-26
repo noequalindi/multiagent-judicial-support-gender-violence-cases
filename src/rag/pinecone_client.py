@@ -51,7 +51,18 @@ class PineconeTextIndexClient:
                 "inputs": {"text": query_text},
                 "top_k": top_k,
             },
-            "fields": [self.cfg.text_field, "source_pdf", "source_id", "category"],
+            "fields": [
+                self.cfg.text_field,
+                "source_pdf",
+                "source_id",
+                "category",
+                "source_type",
+                "title",
+                "summary",
+                "law",
+                "article",
+                "jurisdiction",
+            ],
         }
         with httpx.Client(timeout=30.0) as client:
             resp = client.post(url, headers={**self.headers, "Content-Type": "application/json"}, json=payload)

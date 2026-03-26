@@ -1,6 +1,6 @@
 # Measure Corpus Workflow
 
-This workflow builds a Pinecone-ready corpus from the court measure templates stored in `data/measures/`.
+This workflow builds a Pinecone-ready corpus from the court measure templates stored in `data/measures/` and merges curated legal JSONL corpora from `data/legal/`.
 
 ## Goals
 
@@ -37,6 +37,9 @@ Each JSONL row is either:
 
 - `source_type=template`
 - `source_type=normativa`
+- `source_type=protocolo`
+- `source_type=jurisprudencia`
+- `source_type=tratado_internacional`
 
 ## Recommended next step
 

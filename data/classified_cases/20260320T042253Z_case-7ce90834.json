@@ -1,0 +1,289 @@
+{
+  "created_at": "2026-03-20T04:22:53.402620+00:00",
+  "route": "/classify-measure-pdf",
+  "filename": "caso_exclusion.pdf",
+  "runtime": {
+    "ocr_backend": "tesseract",
+    "tesseract_lang": "spa",
+    "ollama_model": "llama3.2-vision",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6"
+  },
+  "case_id": "case-7ce90834",
+  "anonymized_case": {
+    "case_id": "case-7ce90834",
+    "anonymized_text": "ada, /\n[PERSONA_REDACTED] 2, [PERSONA_REDACTED] PROVINGA pi\nmir [PERSONA_REDACTED]\n\nS\n[PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED]\nPaso 1 - Denuncia\nPersonas intervinientes\n[PERSONA_REDACTED]\nApodo: Nombre: Wi\nLocalidad [DOMICILIO_REDACTED]\nFecha de nacimiento: 06 noviembre 1985 Estado civil Soltero/a\nMigrante: Sin especificar Nacionalidad: P\nPertenece a la com idad gd acionalidad: Paraguay\np a Unidad de Pueblos originarios: No Persona afrodescendiente: No\nOsee a gun tipo de discapacidad: No Necesita interprete de señas: No\nimpedimento para firmar: Puede firmar Lee: Si Escribe: Si\nTipo de documento: DNI d Número de documento: [DNI_REDACTED]\nNivel Educativo: Sin especificar Género: Mujer\nNombre Madre/Padre Sin especificar Apellido Madre/Padre Sin especificar\nNombre Madre/Padre Sin especificar Apellido Madre/Padre Sin especificar\nOcupación: Ama de casa Persona en situación de calle: [DOMICILIO_REDACTED]\nCobertura de Salud: Sin especificar ¿es adherente o titular?: Sin especificar\nTrabajo informal: Sin especificar Ingresos propios: Sin especificar\nDepende economicamente de la Persona que ejerce la o Qi ifi\nAgresión: Sin especificar Puede administrarlo: Sin especificar\nBeneficio o plan social: Sin especificar\nTiene abogado/a: Sin especificar Apellido y Nombre: [PERSONA_REDACTED]\nTiene Sube: Sin especificar N” de Sube: Sin especificar\nObservaciones: Sin especificar\nDOMICILIO\nPais: [DOMICILIO_REDACTED]\nPartido: [DOMICILIO_REDACTED]\nCalle: [DOMICILIO_REDACTED]\nAltura: [DOMICILIO_REDACTED]\nPiso: [DOMICILIO_REDACTED]\nLugar Exacto: [DOMICILIO_REDACTED]\nDescripción: [DOMICILIO_REDACTED]\nCONTACTO\nNúmero teléfono fijo: Sin especificar Número de celular: (11) [DNI_REDACTED]\nE-mail: Sin especificar Vía de notificación: Celular |\nHorario en que puede ser contactada/o: Posee red vincular: Sin especificar\nTeléfono y dirección de una persona de referencia: Sin especificar\n\n \nDS — Escaneado con CamScanner\n\n”»\n7\n»)\nA\n\naTinió 0 Lí [PERSONA_REDACTED] [DOMICILIO_REDACTED]\n\nnas 2 [PERSONA_REDACTED]\n$\n[PERSONA_REDACTED] [PERSONA_REDACTED] e\nN0 de Denuncia: [ID_REDACTED]-[DNI_REDACTED]/2026\n[PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED]\nSee sbilidad de la víctima por razón de enfermedad, discapacidad, embarazo, falta de redes de\n\nntención, dependencia económica y/o por pertenecer al colectivo LGBTIQ+\n\nPaso 2 - Relato del hecho\n\nRelato\n[PERSONA_REDACTED]:\n\nAi RE cla CEDE Bi cs ti A\nE [PERSONA_REDACTED] [PERSONA_REDACTED] 05 AÑOS, [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED]. [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] O [PERSONA_REDACTED] (04) Y [PERSONA_REDACTED] (11).\n\n[PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] ENTRE [DOMICILIO_REDACTED]\n\ny [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] ([PERSONA_REDACTED]) [PERSONA_REDACTED]\nrt [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] , [PERSONA_REDACTED] [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED]. [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] A [PERSONA_REDACTED] [PERSONA_REDACTED], [PERSONA_REDACTED] VENIA\n\npe 10 [PERSONA_REDACTED] Y [PERSONA_REDACTED] [PERSONA_REDACTED] A [PERSONA_REDACTED] MADRE.\n\n[PERSONA_REDACTED] A COMER Y [PERSONA_REDACTED] [PERSONA_REDACTED] DEJANDO A [PERSONA_REDACTED] [PERSONA_REDACTED] MENORES, [PERSONA_REDACTED] SOLO Y [PERSONA_REDACTED]. [PERSONA_REDACTED] A [PERSONA_REDACTED] [PERSONA_REDACTED] A [PERSONA_REDACTED]\n\nA [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] NO ([PERSONA_REDACTED] A [PERSONA_REDACTED] HIJAS), [PERSONA_REDACTED] A [PERSONA_REDACTED] CONSTRUYÓ. -\n\n[PERSONA_REDACTED] Y [PERSONA_REDACTED]. -\n\n[PERSONA_REDACTED] [PERSONA_REDACTED]\n\nSeparación reciente en los últimos 6 meses o en tramites de separacion a |\nAcoso reciente a la víctima en los últimos 6 meses o quebrantamiento de la orden de alejamiento NOS: 3\n| Quebrantamiento de una orden de protección vigente MERA\n| Existencia de violencia física susceptible de causar lesiones WEE\n\n _ _AKA<AAAm>>———— e\n\n| Violencia física en presencia de los hijos u otros familiares NE\nAumento de la frecuencia y de la gravedad de los incidentes violentos en el último mes --\nAmenazas graves o de muerte en el último mes No\nAmenazas con objetos peligrosos a con armas de cualquier tipo AN\nintención clara de causar lesiones graves o muy graves E\n\nEscaneado con CamScanner\n\nmida Lo mo COMERNO De LA A Op IF\nCuemao E >\n[PERSONA_REDACTED] A)\n[PERSONA_REDACTED] De [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED]\nPaso 5 - Denunciado/a\n[PERSONA_REDACTED]\nApellido: > Nombre\nApodo: ombre: ai\nSs Se Nacionalidad: Sin especificar ÍN\nBa va Nacimiento: Sin especificar Localidad [DOMICILIO_REDACTED]\nos a y Nacimiento: 07 diciembre 1987 Edad presunta al hecho: 44\ncd A ei ' Número de documento: [DNI_REDACTED]\n) esco con la ersona | ¡ ¡\n(PSV): Sin especifica, Pp Sometida a la violencia Género: Varón\nOcupación: Operario/Empleado\nVive en el MISMO terreno; Si Convive con la PeA: Sin especificar\nIngresos propios: Sin especificar Divorcio o separación reciente: Sin especificar\n¿De quién es la vivienda?: Sin especificar Betto de la PeA viven en el mismo terreno: Sin\n. a especificar\nVive en el mismo barrio: Sin especificar\nPertenece o perteneció a las Fuerzas armadas/seguridad o policial: Sin especificar\nCobertura de Salud: Sin especificar ¿Es adherente o titular?: Sin especificar\nApellido Materno: Sin especificar\nObservaciones: Sin especificar\nDOMICILIO\nProvincia: [DOMICILIO_REDACTED]\nLocalidad: [DOMICILIO_REDACTED]\nTipo de residencia: Residencia Altura: [DOMICILIO_REDACTED]\nEntre: [DOMICILIO_REDACTED]\nPiso: [DOMICILIO_REDACTED]\nDescripción:\n[DOMICILIO_REDACTED]\n\nA\n)\n2\nRS p\nMIWTOLO pa NN O [PERSONA_REDACTED] 14 (A\n¿QUe [PERSONA_REDACTED] 8\n[PERSONA_REDACTED]\nN? de Denuncia: [ID_REDACTED]-[DNI_REDACTED]/2026 |\nFORMULARIO D :\nE [PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED] |\nPaso 7 - Denuncias anteriores\n(común a todos los fueros) |\nOtros procesos judiciales en trámite qu ¡ ¡ ¡\nSl e lo/a vincula al de a ¡\nObservación: Sin especificar p a |\nSe dictó alguna medida de protección y/o asistencia: Sin especificar\nObservación: Sin especificar\nD . . . ..\nAr de las medidas de protección por parte de la PEA: Sin especificar\n<Merviene juzgado de familia? Sin especificar\nDenuncias anteriores\n[PERSONA_REDACTED] [PERSONA_REDACTED]\nPresencia, tenencia o acceso a arma de fuego Pdo\nPertenece a las fuerzas de seguridad Ma\nCelos muy intensos O conductas controladoras sobre la pareja en los últimos 6 meses pa Y\nHistorial de conductas violentas con una pareja anterior (física y/o psicológica) PR\nHistorial de conductas violentas con otras personas (amigos, vecinos, compañeros de trabajo, etc) MS\nHistorial de conductas violentas con embarazadas, niños o personas con discapacidad US. 23\nConsumo abusivo de alcohol y/o drogas E |\nAntecedentes de enfermedad mental con abandono de tratamientos psiquiátricos o psicológicos Ea |\nConductas de crueldad, de desprecio a la víctima y de falta de arrepentimiento AE\nJustificación de conductas violentas por su propio estado (alcohol, drogas, estrés) o por la\nprovocación de la víctima\n[PERSONA_REDACTED] [PERSONA_REDACTED]\nNivel: BAJO |\n|\n|\n__ \nE [PERSONA_REDACTED] + or el Sistema de Información Delictual el: 08/03/2026 02:08 -9/14\n[PERSONA_REDACTED] Escaneado con CamScanner\n\n/ Y\nra A\n[PERSONA_REDACTED] [PERSONA_REDACTED] [DOMICILIO_REDACTED]\nPA\nN? de Denuncia: [ID_REDACTED]-[DNI_REDACTED]/2026\n[PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED]\nSe me acto, se le ponen en conocimiento los derechos y previsiones establecidos en los artículos 6 bi y? 4; 83, 84,85, 86, 87, 88, 240\nbis y 58 bis de la Ley N* 13.634; 83, 84, 85, 86, 87, p\n2 oh MOTA r Cee Sd E a Procesal Penal de la provincia [DOMICILIO_REDACTED]\n12 yA A ate yd : Maniflent referidas en los artículos\n11,12 y 13 de la ley 15.232. a [ID_REDACTED] su voluntad de... (SI/NO) ser informada de las resoluciones 1 u\noo\nE A 3\nRecursos disponibles para asistencia de atenc; l ms 4 :\nhttps://www.mpba gov.ar/miav nción de las personas sometidas a la violencia en PENA: yA\na E |» |\n[Obie\nVisualización de la denuncia https //seguridad.gba.gob.ar/4/home a\nEo\nalias\nLa persona compareciente ha sido impuesta de las penas con que la ley castiga al/la falso/a denunciante a tenor de los art. 245 y 275 del Código Penal, y\nprestado juramento (o promesa) de decir verdad de todo lo que supiere, manifestare o le fuere preguntado. -\nLa/el denunciante solicita que se envíe esta denuncia al medio digital seleccionado, en caso de requerirse se entre[DOMICILIO_REDACTED]\nsaber los derechos que le asisten, transcribiéndolos en la denuncia que se le envía al medio digital seleccionado\n> ha nu . a\nAA = ” me Y\nH- a >» Ñ /\n, 07 . A RINA\nA [PERSONA_REDACTED] EA ,\nY > a y\nFDO! ,\n— Nombre: Vorma ES ame d, Funcionario:[PERSONA_REDACTED] ANGELES\n— Apellido: (cv ree». Jerarquia: SUBTENIENTE (E.G.)\n— Documento: 4/9 f 72 gy Legajo: 181501\n \no Escaneado con CamScanner",
+    "facts": [
+      "Se reportan amenazas.",
+      "Se reportan agresiones fisicas o lesiones."
+    ],
+    "active_measures": [
+      "Evaluar medidas cautelares urgentes"
+    ],
+    "risk_factors": [
+      "Acceso reportado a arma",
+      "NNA involucrados"
+    ],
+    "timeline": [
+      "Ingreso de denuncia",
+      "Evaluacion interdisciplinaria inicial"
+    ]
+  },
+  "retrieval": [
+    {
+      "query": "Ley 26485 protección integral mujeres medidas cautelares urgentes violencia doméstica amenazas lesiones",
+      "hits": [
+        {
+          "source_id": "medida_abstencion_violencia_template",
+          "excerpt": "···········Carátula de la Causa.- ··············EXPEDIENTE N° Identificación de la Causa.- ··············REGISTRO N° ......- San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario . Por recibido.- En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cautelar resérvese en Secretarìa ( conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normativa recientemente implementada (Art. 41 inc B del Acuerdo N°3397), acumúlese la denuncia realizada en los presentes.- AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del C.P.C.C.), teniendo en cuenta que las resoluciones dictadas en el marco de la presente son despachadas con carácter urgente, por un breve plazo, atendiendo que la finalidad principal de la norma es hacer cesar el denunciado e hipotético riesgo que pesa sobre las presuntas víctimas, poniendo así un paño frío en una escalada de violencia que no se podría lograr de tener que esperar la intervención del Juez natural que corresponda al tipo de conflictiva que la produjo (divorcio, ejercicio de la responsabilidad parental, régimen comunicacional, alimentos, determinación de la capacidad jurídica, desalojo, etc), bastando la mera sospecha de maltrato, por lo que en modo alguno implica una decisión sobre la autoría o no de los hechos atribuidos, a los fines de proteger a la denunciante, con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569, art. 5° del Dec. 2875/05 y conc. SE RESUELVE: Disponer provisoriamente por el plazo de 90 días, susceptible de ser prorrogado en caso de ser necesario: 1°) Hacer saber a APELLIDO y NOMBRE del Denunciado que deberá cesar y/o abstenerse de la realización de todo acto violento sea de caracter físico, psicológico o emocional, por toda vía de contacto posible respecto de la persona de APELLIDO y NOMBRE del Denunciante bajo apercibimiento para el caso de desobediencia de dar intervención al Sr. Fiscal en lo Penal que por turno corresponda (art. 239 del C. Penal) y aplicación de multa conforme lo dispuesto por el art. 804 del C. Civil.- 2°) Hacer saber a las partes que deberán concurrir dentro de las 48 hs. a los centros especializados en violencia familiar donde sean derivados, previa comunicación a la Mesa Local de Violencia (Sec. Desarrollo Social, Munic. La Matanza), al 4484-2858/7898/7899, o al programa provincial, al 0800-555-0137 (24 hs), o Dirección de Política de Género Municipal, Rivadavia nº 13.518, Ramos Mejía (4654-7454 int.137) donde deberán efectuarles el informe transdisciplinario del art. 8 de la Ley 12.569. Acompañado, se fijaran las audiencias pertinentes. 3º) Sin perjuicio de lo precedentemente dispuesto, y siendo que medidas protectorias dictadas en el marco de la Ley 12.569 revisten plena autonomía, agotándose en principio el objeto con su sólo dictado, se hace saber a la denunciante que pasados 30 días del vencimiento de la misma y de producirse inactividad de su parte que permita inferir desinterés y/o superación de la situación, se procederá al archivo sin más trámite de las actuaciones, por entenderse que no subsisten los motivos que originaron el dictado de la presente medida.--REGISTRESE. NOTIFIQUESE y comuníquese la presente resolución mediante oficio al SR. COMISARIO que corresponda, a los fines de poner en conocimiento del denunciado la presente resolución.- Cítase a la denunciante para que dentro de las 48 hs. de notificada, en el horario de 08:00 a 11:00 hs., comparezca a la sede de este Juzgado, a los fines de la realización de una evaluación de riesgo con el equipo técnico y para que se de cumplimiento con el art 11 de la ley 12569, modificada por ley 14509, bajo apercibimiento en caso de incomparencia injustificada de hacer efectivo lo \" ut supra\" dispuesto.- Asimismo, pasen las presentes actuaciones al Equipo Técnico a fin de que realice la entrevista correspondiente a la denunciante mediante la utilización del medio tecnológico mas idóneo a los fines de la realización de una evaluación de riesgo y que se de cumplimiento con el art 11 de la ley 12569, modificada por ley 14509.- Gonzalo J. Gallo Quinitian Juez",
+          "title": "Plantilla de abstencion de actos de violencia",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.4928461015224457
+        },
+        {
+          "source_id": "ley_26485_art26",
+          "excerpt": "Durante cualquier etapa del proceso el/la juez/a interviniente podrá, de oficio o a petición de parte, ordenar una o más de las siguientes medidas preventivas de acuerdo a los tipos y modalidades de violencia contra la mujer definidas en los artículos 5° y 6° de la presente ley: a.1) Ordenar la prohibición de acercamiento del presunto agresor al lugar de residencia, trabajo, estudio, esparcimiento o a los lugares de habitual concurrencia de la mujer que padece violencia; a.2) Ordenar al presunto agresor que cese en los actos de perturbación o intimidación que, directa o indirectamente, realice hacia la mujer; a.3) Ordenar la exclusión de la parte agresora de la residencia común, independientemente de la titularidad de la misma; a.4) Ordenar a la fuerza pública, llevar a cabo las medidas tendientes al cumplimiento de las medidas que se adopten; b.1) Prohibir al presunto agresor enajenar, disponer, destruir, ocultar o trasladar bienes gananciales de la sociedad conyugal o los comunes de la pareja conviviente; b.2) Ordenar la suspensión provisoria del régimen de visitas; b.3) Ordenar al presunto agresor abstenerse de interferir en el ejercicio del cuidado de los hijos.",
+          "title": "Ley 26.485 art. 26 – Medidas preventivas urgentes",
+          "law": "Ley 26.485",
+          "article": "26",
+          "source_type": "normativa",
+          "jurisdiction": "Nacional",
+          "relevance_score": 0.46823692321777344
+        },
+        {
+          "source_id": "fallo_001",
+          "excerpt": "[Jurisprudencia - Exclusión del hogar + Perímetro] Violencia física con lesiones, amenazas de muerte, arma de fuego, menores convivientes. Riesgo alto. Se confirma exclusión del hogar y perímetro 300m. Fundamento: reiteración documentada y exposición de menores. Arts. 7 Ley 12.569 y 26 Ley 26.485.",
+          "title": null,
+          "law": null,
+          "article": null,
+          "source_type": "jurisprudencia",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.43153753876686096
+        }
+      ]
+    },
+    {
+      "query": "medidas cautelares violencia de género armas NNA menores involucrados riesgo alto Argentina jurisprudencia",
+      "hits": [
+        {
+          "source_id": "fallo_001",
+          "excerpt": "[Jurisprudencia - Exclusión del hogar + Perímetro] Violencia física con lesiones, amenazas de muerte, arma de fuego, menores convivientes. Riesgo alto. Se confirma exclusión del hogar y perímetro 300m. Fundamento: reiteración documentada y exposición de menores. Arts. 7 Ley 12.569 y 26 Ley 26.485.",
+          "title": null,
+          "law": null,
+          "article": null,
+          "source_type": "jurisprudencia",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.4904848039150238
+        },
+        {
+          "source_id": "protocolo_riesgo_violencia",
+          "excerpt": "El protocolo de valoración de riesgo en violencia familiar establece indicadores para clasificar el nivel de riesgo (bajo, medio, alto) que orientan la adopción de medidas cautelares. Indicadores de alto riesgo: amenazas de muerte, uso o tenencia de armas, violencia física grave o con lesiones, aislamiento social de la víctima, episodios anteriores de violencia, incumplimiento de medidas previas, presencia de menores en el hogar expuestos a la violencia, consumo de sustancias por el agresor, celos extremos o conductas de control. Indicadores de riesgo medio: violencia psicológica reiterada, amenazas sin especificación de método, dependencia económica de la víctima. Indicadores de bajo riesgo: episodio aislado sin antecedentes, sin armas, sin lesiones físicas.",
+          "title": "Protocolo de Valoración de Riesgo en Violencia Familiar – Indicadores",
+          "law": "Protocolo de Valoración de Riesgo",
+          "article": null,
+          "source_type": "protocolo",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.46643713116645813
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de seguridad respecto de NOMBRE y APELLIDO del Denunciado. Tal pretensión ha sido reiterada en la entrevista practicada por el Equipo Técnico Interdisciplinario del Juzgado.·Del informe realizado, del cual surge \"PONER CONCLUSION\".En función de lo antedicho, con el objetivo de morigerar la escalada de violencia, se sugeriría arbitrar los medios para impedir la convivencia entre las partes...\". Que con las constancias de autos, se acredita \"prima facie\" la verosimilitud de los hechos invocados. Consecuentemente, a la luz de los elementos indicados precedentemente -los que se valoran conforme a la sana crítica-, y teniendo en cuenta que la medida de exclusión es temporaria, de carácter cautelar, con el fin de crear condiciones adecuadas para la evaluación y tratamiento de la conflictiva familiar, y fundada prioritariamente en el interés de los menores involucrados y teniendo en cuenta que las resoluciones dictadas en el marco de la presente son despachadas con carácter urgente, por un breve plazo, atendiendo que la finalidad principal de la norma es hacer cesar el denunciado e hipotético riesgo que pesa sobre las presuntas víctimas, poniendo así un paño frío en una escalada de violencia que no se podría lograr de tener que esperar la intervención del Juez natural que corresponda al tipo de conflictiva que la produjo (divorcio, cuidado personal, régimen comunicacional, alimentos, insania, desalojo, etc), bastando la mera sospecha de maltrato, por lo que en modo alguno implica una decisión sobre la autoría o no de los hechos atribuidos, a los fines de proteger a la denunciante, con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569, art. 5° del Dec. 2875/05 y conc., es que entiendo que lo pretendido en autos debe prosperar. II.- Por lo expuesto y en virtud de lo dispuesto por los arts. 232, 384, 827 -inc. t- del Código Procesal; arts. 7, 11, 12 y conc. de la ley 12.569; arts. 5 -pto. 1-, 19 y 25 -pto. 1- del Pacto de San José de Costa Rica -ley 23.054-; art. 75 -inc.22- de la Constitución Nacional y arts. 3, 4 y conc. de la \"Convención de Belem do Para\" (ley 24.632), SE RESUELVE: Disponer provisoriamente, por el plazo de noventa días (90 días), susceptible de ser prorrogado en caso de ser necesario por el Juzgado o a pedido de parte, y bajo el apercibimiento para el caso de desobediencia o incumplimiento de dar intervención al Señor Fiscal en lo Penal que por turno corresponda (art. 239 del Código Penal) y multa conforme lo dispuesto por el art. 804 del Código Civil, las siguientes medidas: 1º) La exclusión de NOMBRE y APELLIDO del Denunciado el hogar familiar sito en la calle que se denuncia como Domicilio de la Parte (Tipo y Nro), Partido de La Matanza, con la advertencia de que no podrá regresar al mismo, aún vencido dicho plazo, sin órden expresa de éste Juzgado, atribuyéndose la vivienda por el tiempo que dure la medida a NOMBRE y APELLIDO del Denunciante 2°) La prohibición de que NOMBRE y APELLIDO del Denunciado, se aproxime a la Señora NOMBRE y APELLIDO del Denunciante y VER sus hijos, hasta un radio de 300 METROS a la redonda del domicilio de la actora, como del lugar de trabajo y de estudio y/o esparcimiento de los mismos, por toda vía de contacto posible. 3º) Otorgar a NOMBRE y APELLIDO del Denunciante EL CUIDADO PERSONAL PROVISORIO de sus hijos menores por el tiempo que dure la medida. 4°) Hacer saber a las partes que deberán concurrir dentro de las 48 hs. a los centros especializados en violencia familiar donde sean derivados, previa comunicación a la Mesa Local de Violencia (Sec. Desarrollo Social, Munic. La Matanza), al 4484-2858/7898/7899, o al programa provincial, al 0800-555-0137 (24 hs), o Dirección de Política de Género Municipal, Rivadavia nº 13.518, Ramos Mejía (4654-7454 int.137) donde deberán efectuarles el informe transdisciplinario del art. 8 de la Ley 12.569. Acompañado, se fijaran las audiencias pertinentes. 5º) A fin de efectivizar la medida dispuesta precedentemente líbrese oficio policial de exclusión del hogar con habilitación de días y horas inhábiles, facultando al personal policial a allanar el domicilio denunciado y en caso de ser necesario utilizar los servicios de un cerrajero y violentar candados y/o cerraduras, procediendo al cambio de las mismas. Déjase constancia en el mismo de la/s persona/s autorizada/s a correr con su diligenciamiento y a denunciar y/o individualizar domicilio en el acto de la diligencia. En el mismo acto se deberá atribuir el hogar familiar a NOMBRE y APELLIDO del Denunciante a quien también se designará depositaria de los bienes muebles que se encontraren en la vivienda y respecto de los cuales se realizará un prolijo inventario, aún en el supuesto de no encontrarse persona alguna en el domicilio, enterándola de las responsabilidades de los depositarios judiciales. Se deja constancia que el demandado, NOMBRE y APELLIDO del Denunciado , podrá retirar en el mismo acto sus efectos personales. Así también el personal policial interviniente en la diligencia, en caso de existir riesgo cierto e inminente para la persona del accionado o para terceros y en los términos de los arts 41y 42 del CCyCN y normas complementarias, deberá arbitrar los medios para que se le practique a este una evaluación psiquiátrica por ante el Hospital Dr Diego Paroissien y proceder de acuerdo a los resultados de ella. 6) Sin perjuicio de lo precedentemente dispuesto, y siendo que medidas protectorias dictadas en el marco de la Ley 12.569 revisten plena autonomía, agotándose en principio el objeto con su sólo dictado, se hace saber a la denunciante que pasados 30 días del vencimiento de la misma y de producirse inactividad de su parte que permita inferir desinterés y/o superación de la situación, se procederá al archivo sin más trámite de las actuaciones, por entenderse que no subsisten los motivos que originaron el dictado de la presente medida.REGISTRESE. NOTIFIQUESE.- y comuníquese la presente resolución mediante oficio al SR. COMISARIO que corresponda, a los fines de prestar asistencia a la actora en caso de ser requerida por ésta.Toda vez que del informe surge la presunta comisión de un delito contemplado por el Código Penal, póngase en conocimiento de la U.F.I. en turno - con carácter de urgente- a los fines que estime corresponder. A cuyo fin, líbrese oficio a la Fiscalía de Cámaras Departamental adjuntando el mencionado informe en formato pdf.Notifíquese en forma electrónica al Ministerio Pupilar.Expídase, por Secretaría, formulario de comunicación a la Dirección del Registro de Antecedentes del Ministerio de Seguridad de la Pcia de Bs. As (Res. SCBA 3211/13).- Gonzalo J. Gallo Quintian Juez",
+          "title": "Plantilla de medida de exclusion del hogar",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.3484156131744385
+        }
+      ]
+    },
+    {
+      "query": "Ley 24417 violencia familiar Buenos Aires medidas de protección exclusión hogar prohibición acercamiento",
+      "hits": [
+        {
+          "source_id": "fallo_001",
+          "excerpt": "[Jurisprudencia - Exclusión del hogar + Perímetro] Violencia física con lesiones, amenazas de muerte, arma de fuego, menores convivientes. Riesgo alto. Se confirma exclusión del hogar y perímetro 300m. Fundamento: reiteración documentada y exposición de menores. Arts. 7 Ley 12.569 y 26 Ley 26.485.",
+          "title": null,
+          "law": null,
+          "article": null,
+          "source_type": "jurisprudencia",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.48368462920188904
+        },
+        {
+          "source_id": "ley_26485_art26",
+          "excerpt": "Durante cualquier etapa del proceso el/la juez/a interviniente podrá, de oficio o a petición de parte, ordenar una o más de las siguientes medidas preventivas de acuerdo a los tipos y modalidades de violencia contra la mujer definidas en los artículos 5° y 6° de la presente ley: a.1) Ordenar la prohibición de acercamiento del presunto agresor al lugar de residencia, trabajo, estudio, esparcimiento o a los lugares de habitual concurrencia de la mujer que padece violencia; a.2) Ordenar al presunto agresor que cese en los actos de perturbación o intimidación que, directa o indirectamente, realice hacia la mujer; a.3) Ordenar la exclusión de la parte agresora de la residencia común, independientemente de la titularidad de la misma; a.4) Ordenar a la fuerza pública, llevar a cabo las medidas tendientes al cumplimiento de las medidas que se adopten; b.1) Prohibir al presunto agresor enajenar, disponer, destruir, ocultar o trasladar bienes gananciales de la sociedad conyugal o los comunes de la pareja conviviente; b.2) Ordenar la suspensión provisoria del régimen de visitas; b.3) Ordenar al presunto agresor abstenerse de interferir en el ejercicio del cuidado de los hijos.",
+          "title": "Ley 26.485 art. 26 – Medidas preventivas urgentes",
+          "law": "Ley 26.485",
+          "article": "26",
+          "source_type": "normativa",
+          "jurisdiction": "Nacional",
+          "relevance_score": 0.4833703339099884
+        },
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el art. 3 de la Ley 12.569 y el art. 5° del Decreto 2875/05 reglamentario de dicha ley, sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del CPCC), teniendo en cuenta que la medida de restricción es temporaria, de carácter cautelar, con el fin de crear condiciones adecuadas para la evaluación y tratamiento de la conflictiva familiar, y asimismo, \"la ley ha establecido un procedimiento para el dictado de medidas urgentes que en modo alguno implica una decisión de mérito respecto de la autoría de los hechos atribuidos, tratándose de verdaderas medidas cautelares para las cuales basta la mera sospecha de maltrato y la verosimilitud de la sentencia (Doctrina Judicial, del 21-3-96, fallo 10.806) (conf. Responsabilidad de los padres, tutores y guardadores, Iturraspe, D Antonio, Novellino, pág. 185/185), a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC; arts. 5, 7, 11 y 12 de la ley 12.569, SE RESUELVE: Disponer provisoriamente por el plazo de 90 días, susceptible de ser prorrogado en caso de ser necesario, y bajo el apercibimiento para el caso de desobediencia de dar intervención al Sr. Juez en lo Penal que por turno Código de barras del trámite Código de barras del trámite en números corresponda (art. 239 del C. Penal) y multa conforme lo dispuesto por el art. 666 bis del C. Civil, las siguientes medidas: 1°) La prohibición de que APELLIDO y NOMBRE del Demandado NOMBRE del Actor se aproxime a APELLIDO y hasta un radio de 300 metros a la redonda del domicilio de la actora sito en la calle que se denuncia como Domicilio del Actor (Tipo y Nro) , como del lugar de trabajo y de estudio y/o esparcimiento; debiendo cesar y/o abstenerse de la realización de todo acto violento sea de caracter físico, psicológico o emocional respecto de su persona. 2°) Hágase saber a la parte actora que deberá promover las acciones correspondientes con debido patrocinio letrado. Asimismo podrá solicitar asesoramiento gratuito en caso de carecer de medios económicos, en la Defensoría Oficial Departamental sita en la calle Almafuerte 3133 de la ciudad de San Justo; 3°) Instese a las partes a concurrir a los centros especializados en violencia familiar a saber: la Dirección de Política de Género dependiente de la Municipalidad de La Matanza, sita en la calle Rivadavia nº 13518 de la localidad de Ramos Mejía ( tel nº 46547454 interno 137) y la Casa de la Mujer \"Rosa Chazarreta\", sito en Bedoya Nº 6315 y calle Isleños, de la localidad de Isidro Casanova (Tel: 5233-1179): 4º) Sin perjuicio de lo precedentemente dispuesto, y siendo que medidas dictadas en el marco de las Ley 12.569 son calificadas como regla y en principio autosatisfactivas, revistiendo plena autonomía y agotando el proceso con su sólo dictado, se hace saber a la denunciante que pasados 30 días del vencimiento de la misma y de producirse inactividad de su parte que permita inferir desinterés y/o superación de la situación, se procederá al archivo sin más trámite de las actuaciones, por entenderse que no subsisten los motivos que originaron el dictado de la presente medida.REGISTRESE. NOTIFIQUESE y comuníquese la presente resolución mediante oficio al SR. COMISARIO que corresponda, a los fines de Código de barras del trámite Código de barras del trámite en números prestar asistencia a la actora en caso de ser requerida por ésta.················Gonzalo J. Gallo Quintian ··························Juez ATENCION: CARGAR EL TRAMITE VACIO: CAUTELAR EN VIOLENCIA ORDENA!!!!!!!!!!!! En la misma fecha se libran oficios. Cte.- FAMILIAR-SE",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.4663287401199341
+        }
+      ]
+    },
+    {
+      "query": "violencia de género migrante paraguaya dependencia económica factores de riesgo femicidio evaluación interdisciplinaria",
+      "hits": [
+        {
+          "source_id": "fallo_001",
+          "excerpt": "[Jurisprudencia - Exclusión del hogar + Perímetro] Violencia física con lesiones, amenazas de muerte, arma de fuego, menores convivientes. Riesgo alto. Se confirma exclusión del hogar y perímetro 300m. Fundamento: reiteración documentada y exposición de menores. Arts. 7 Ley 12.569 y 26 Ley 26.485.",
+          "title": null,
+          "law": null,
+          "article": null,
+          "source_type": "jurisprudencia",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.40763556957244873
+        },
+        {
+          "source_id": "protocolo_riesgo_violencia",
+          "excerpt": "El protocolo de valoración de riesgo en violencia familiar establece indicadores para clasificar el nivel de riesgo (bajo, medio, alto) que orientan la adopción de medidas cautelares. Indicadores de alto riesgo: amenazas de muerte, uso o tenencia de armas, violencia física grave o con lesiones, aislamiento social de la víctima, episodios anteriores de violencia, incumplimiento de medidas previas, presencia de menores en el hogar expuestos a la violencia, consumo de sustancias por el agresor, celos extremos o conductas de control. Indicadores de riesgo medio: violencia psicológica reiterada, amenazas sin especificación de método, dependencia económica de la víctima. Indicadores de bajo riesgo: episodio aislado sin antecedentes, sin armas, sin lesiones físicas.",
+          "title": "Protocolo de Valoración de Riesgo en Violencia Familiar – Indicadores",
+          "law": "Protocolo de Valoración de Riesgo",
+          "article": null,
+          "source_type": "protocolo",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.3647123873233795
+        },
+        {
+          "source_id": "ley_26485_art4",
+          "excerpt": "Para los efectos de la presente ley se entiende por tipos de violencia contra la mujer: a) Física: la que se emplea contra el cuerpo de la mujer produciendo dolor, daño o riesgo de producirlo; b) Psicológica: la que causa daño emocional y disminución de la autoestima o perjudica y perturba el pleno desarrollo personal; c) Sexual: cualquier acción que implique la vulneración del derecho de la mujer a decidir voluntariamente acerca de su vida sexual o reproductiva; d) Económica y patrimonial: la que se dirige a ocasionar un menoscabo en los recursos económicos o patrimoniales de la mujer; e) Simbólica: la que refuerza patrones estereotipados de comportamiento.",
+          "title": "Ley 26.485 art. 4 – Tipos de violencia",
+          "law": "Ley 26.485",
+          "article": "4",
+          "source_type": "normativa",
+          "jurisdiction": "Nacional",
+          "relevance_score": 0.35646048188209534
+        }
+      ]
+    },
+    {
+      "query": "criterios urgencia medidas cautelares violencia doméstica acceso armas niños niñas adolescentes jurisprudencia argentina",
+      "hits": [
+        {
+          "source_id": "fallo_001",
+          "excerpt": "[Jurisprudencia - Exclusión del hogar + Perímetro] Violencia física con lesiones, amenazas de muerte, arma de fuego, menores convivientes. Riesgo alto. Se confirma exclusión del hogar y perímetro 300m. Fundamento: reiteración documentada y exposición de menores. Arts. 7 Ley 12.569 y 26 Ley 26.485.",
+          "title": null,
+          "law": null,
+          "article": null,
+          "source_type": "jurisprudencia",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.508323609828949
+        },
+        {
+          "source_id": "medida_abstencion_violencia_template",
+          "excerpt": "···········Carátula de la Causa.- ··············EXPEDIENTE N° Identificación de la Causa.- ··············REGISTRO N° ......- San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario . Por recibido.- En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cautelar resérvese en Secretarìa ( conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normativa recientemente implementada (Art. 41 inc B del Acuerdo N°3397), acumúlese la denuncia realizada en los presentes.- AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del C.P.C.C.), teniendo en cuenta que las resoluciones dictadas en el marco de la presente son despachadas con carácter urgente, por un breve plazo, atendiendo que la finalidad principal de la norma es hacer cesar el denunciado e hipotético riesgo que pesa sobre las presuntas víctimas, poniendo así un paño frío en una escalada de violencia que no se podría lograr de tener que esperar la intervención del Juez natural que corresponda al tipo de conflictiva que la produjo (divorcio, ejercicio de la responsabilidad parental, régimen comunicacional, alimentos, determinación de la capacidad jurídica, desalojo, etc), bastando la mera sospecha de maltrato, por lo que en modo alguno implica una decisión sobre la autoría o no de los hechos atribuidos, a los fines de proteger a la denunciante, con fundamento en los arts. 3, 5, 7, 11 y 12 de la Ley 12.569, art. 5° del Dec. 2875/05 y conc. SE RESUELVE: Disponer provisoriamente por el plazo de 90 días, susceptible de ser prorrogado en caso de ser necesario: 1°) Hacer saber a APELLIDO y NOMBRE del Denunciado que deberá cesar y/o abstenerse de la realización de todo acto violento sea de caracter físico, psicológico o emocional, por toda vía de contacto posible respecto de la persona de APELLIDO y NOMBRE del Denunciante bajo apercibimiento para el caso de desobediencia de dar intervención al Sr. Fiscal en lo Penal que por turno corresponda (art. 239 del C. Penal) y aplicación de multa conforme lo dispuesto por el art. 804 del C. Civil.- 2°) Hacer saber a las partes que deberán concurrir dentro de las 48 hs. a los centros especializados en violencia familiar donde sean derivados, previa comunicación a la Mesa Local de Violencia (Sec. Desarrollo Social, Munic. La Matanza), al 4484-2858/7898/7899, o al programa provincial, al 0800-555-0137 (24 hs), o Dirección de Política de Género Municipal, Rivadavia nº 13.518, Ramos Mejía (4654-7454 int.137) donde deberán efectuarles el informe transdisciplinario del art. 8 de la Ley 12.569. Acompañado, se fijaran las audiencias pertinentes. 3º) Sin perjuicio de lo precedentemente dispuesto, y siendo que medidas protectorias dictadas en el marco de la Ley 12.569 revisten plena autonomía, agotándose en principio el objeto con su sólo dictado, se hace saber a la denunciante que pasados 30 días del vencimiento de la misma y de producirse inactividad de su parte que permita inferir desinterés y/o superación de la situación, se procederá al archivo sin más trámite de las actuaciones, por entenderse que no subsisten los motivos que originaron el dictado de la presente medida.--REGISTRESE. NOTIFIQUESE y comuníquese la presente resolución mediante oficio al SR. COMISARIO que corresponda, a los fines de poner en conocimiento del denunciado la presente resolución.- Cítase a la denunciante para que dentro de las 48 hs. de notificada, en el horario de 08:00 a 11:00 hs., comparezca a la sede de este Juzgado, a los fines de la realización de una evaluación de riesgo con el equipo técnico y para que se de cumplimiento con el art 11 de la ley 12569, modificada por ley 14509, bajo apercibimiento en caso de incomparencia injustificada de hacer efectivo lo \" ut supra\" dispuesto.- Asimismo, pasen las presentes actuaciones al Equipo Técnico a fin de que realice la entrevista correspondiente a la denunciante mediante la utilización del medio tecnológico mas idóneo a los fines de la realización de una evaluación de riesgo y que se de cumplimiento con el art 11 de la ley 12569, modificada por ley 14509.- Gonzalo J. Gallo Quinitian Juez",
+          "title": "Plantilla de abstencion de actos de violencia",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.5022810697555542
+        },
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el art. 3 de la Ley 12.569 y el art. 5° del Decreto 2875/05 reglamentario de dicha ley, sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del CPCC), teniendo en cuenta que la medida de restricción es temporaria, de carácter cautelar, con el fin de crear condiciones adecuadas para la evaluación y tratamiento de la conflictiva familiar, y asimismo, \"la ley ha establecido un procedimiento para el dictado de medidas urgentes que en modo alguno implica una decisión de mérito respecto de la autoría de los hechos atribuidos, tratándose de verdaderas medidas cautelares para las cuales basta la mera sospecha de maltrato y la verosimilitud de la sentencia (Doctrina Judicial, del 21-3-96, fallo 10.806) (conf. Responsabilidad de los padres, tutores y guardadores, Iturraspe, D Antonio, Novellino, pág. 185/185), a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC; arts. 5, 7, 11 y 12 de la ley 12.569, SE RESUELVE: Disponer provisoriamente por el plazo de 90 días, susceptible de ser prorrogado en caso de ser necesario, y bajo el apercibimiento para el caso de desobediencia de dar intervención al Sr. Juez en lo Penal que por turno Código de barras del trámite Código de barras del trámite en números corresponda (art. 239 del C. Penal) y multa conforme lo dispuesto por el art. 666 bis del C. Civil, las siguientes medidas: 1°) La prohibición de que APELLIDO y NOMBRE del Demandado NOMBRE del Actor se aproxime a APELLIDO y hasta un radio de 300 metros a la redonda del domicilio de la actora sito en la calle que se denuncia como Domicilio del Actor (Tipo y Nro) , como del lugar de trabajo y de estudio y/o esparcimiento; debiendo cesar y/o abstenerse de la realización de todo acto violento sea de caracter físico, psicológico o emocional respecto de su persona. 2°) Hágase saber a la parte actora que deberá promover las acciones correspondientes con debido patrocinio letrado. Asimismo podrá solicitar asesoramiento gratuito en caso de carecer de medios económicos, en la Defensoría Oficial Departamental sita en la calle Almafuerte 3133 de la ciudad de San Justo; 3°) Instese a las partes a concurrir a los centros especializados en violencia familiar a saber: la Dirección de Política de Género dependiente de la Municipalidad de La Matanza, sita en la calle Rivadavia nº 13518 de la localidad de Ramos Mejía ( tel nº 46547454 interno 137) y la Casa de la Mujer \"Rosa Chazarreta\", sito en Bedoya Nº 6315 y calle Isleños, de la localidad de Isidro Casanova (Tel: 5233-1179): 4º) Sin perjuicio de lo precedentemente dispuesto, y siendo que medidas dictadas en el marco de las Ley 12.569 son calificadas como regla y en principio autosatisfactivas, revistiendo plena autonomía y agotando el proceso con su sólo dictado, se hace saber a la denunciante que pasados 30 días del vencimiento de la misma y de producirse inactividad de su parte que permita inferir desinterés y/o superación de la situación, se procederá al archivo sin más trámite de las actuaciones, por entenderse que no subsisten los motivos que originaron el dictado de la presente medida.REGISTRESE. NOTIFIQUESE y comuníquese la presente resolución mediante oficio al SR. COMISARIO que corresponda, a los fines de Código de barras del trámite Código de barras del trámite en números prestar asistencia a la actora en caso de ser requerida por ésta.················Gonzalo J. Gallo Quintian ··························Juez ATENCION: CARGAR EL TRAMITE VACIO: CAUTELAR EN VIOLENCIA ORDENA!!!!!!!!!!!! En la misma fecha se libran oficios. Cte.- FAMILIAR-SE",
+          "title": "Plantilla de prohibicion de acercamiento",
+          "law": null,
+          "article": null,
+          "source_type": "template",
+          "jurisdiction": "Provincia de Buenos Aires",
+          "relevance_score": 0.4896606504917145
+        }
+      ]
+    }
+  ],
+  "classification": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-6",
+    "selected_template_id": "medida_exclusion",
+    "selected_template_name": "Exclusion del hogar + restriccion de acercamiento",
+    "rationale": "Se recepciona denuncia de una mujer de nacionalidad paraguaya, nacida el 06/11/1985, ama de casa, quien reporta haber sido víctima de agresiones físicas y amenazas por parte del denunciado. Del resumen estructurado del caso surge la presencia de menores de edad en el hogar (de 4 y 11 años aproximadamente), acceso reportado a arma por parte del denunciado, y una situación de separación reciente o en trámite. La denunciante no registra ingresos propios declarados y presenta indicadores de vulnerabilidad por su condición migratoria y posible aislamiento de redes de contención. La concurrencia de agresiones físicas, amenazas, acceso a arma, presencia de menores convivientes expuestos y separación reciente configura un cuadro de RIESGO ALTO conforme los indicadores establecidos en el Protocolo de Valoración de Riesgo en Violencia Familiar. En situaciones de esta naturaleza, la jurisprudencia del fuero y la normativa aplicable orientan hacia la adopción de medidas de exclusión del hogar combinadas con prohibición de acercamiento perimetral, a fin de garantizar la integridad física y psíquica de la víctima y de los menores convivientes. La mera sospecha de maltrato resulta suficiente para el dictado de medidas cautelares urgentes, sin que ello implique pronunciamiento sobre la autoría de los hechos. La presencia de menores expuestos a la violencia refuerza la necesidad de otorgar el cuidado personal provisorio a la denunciante. La posible tenencia de arma por parte del denunciado eleva significativamente el riesgo y justifica la adopción de medidas de mayor intensidad protectoria. Se advierte que el relato del hecho se encuentra parcialmente ilegible en el expediente digitalizado, lo que limita la reconstrucción completa de los hechos; no obstante, los indicadores estructurados son suficientes para fundar la urgencia de la medida.",
+    "confidence": 0.0,
+    "supporting_source_ids": [
+      "medida_abstencion_violencia_template",
+      "ley_26485_art26",
+      "fallo_001",
+      "fallo_001",
+      "protocolo_riesgo_violencia",
+      "medida_exclusion_template",
+      "fallo_001",
+      "ley_26485_art26"
+    ],
+    "suggested_measures": [
+      "exclusion",
+      "perimetro"
+    ],
+    "risk_level": "alto",
+    "risk_indicators": [
+      "Amenazas reportadas",
+      "Agresiones físicas o lesiones reportadas",
+      "Acceso reportado a arma",
+      "Menores de edad involucrados (NNA convivientes expuestos a la violencia)",
+      "Separación reciente o en trámite (factor de escalada de riesgo)",
+      "Víctima de nacionalidad extranjera (paraguaya), posible vulnerabilidad por redes de contención reducidas",
+      "Víctima ama de casa sin ingresos propios especificados (posible dependencia económica)"
+    ],
+    "alerts": [],
+    "applicable_articles": [
+      {
+        "ley": "Ley 12.569",
+        "articulo": "Arts. 3, 5, 7, 11 y 12",
+        "relevancia": "Fundamento normativo provincial para el dictado de medidas cautelares urgentes de protección contra la violencia familiar, incluyendo exclusión del hogar y prohibición de acercamiento. Citados en las plantillas de resolución del juzgado como base de toda medida protectoria."
+      },
+      {
+        "ley": "Ley 26.485",
+        "articulo": "Art. 26, incs. a.1, a.2, a.3 y a.4",
+        "relevancia": "Habilita al juez a ordenar, de oficio o a petición de parte, la prohibición de acercamiento al lugar de residencia, el cese de actos de perturbación e intimidación, la exclusión de la parte agresora de la residencia común y la intervención de la fuerza pública para el cumplimiento de las medidas."
+      },
+      {
+        "ley": "Ley 26.485",
+        "articulo": "Art. 26, inc. b.2 y b.3",
+        "relevancia": "Faculta al juez a suspender provisoriamente el régimen de visitas y ordenar al presunto agresor abstenerse de interferir en el ejercicio del cuidado de los hijos, en atención a la presencia de menores convivientes expuestos."
+      },
+      {
+        "ley": "Ley 26.485",
+        "articulo": "Art. 4",
+        "relevancia": "Define los tipos de violencia contra la mujer (física y psicológica), encuadrando las agresiones físicas y amenazas reportadas en la presente denuncia."
+      },
+      {
+        "ley": "Decreto 2875/05",
+        "articulo": "Art. 5°",
+        "relevancia": "Reglamentario de la Ley 12.569, citado en las plantillas del juzgado como fundamento del procedimiento urgente de protección."
+      },
+      {
+        "ley": "Código Procesal Civil y Comercial de la Provincia de Buenos Aires",
+        "articulo": "Arts. 197, 232, 384 y 827 inc. t",
+        "relevancia": "Fundamento procesal para el dictado de medidas cautelares urgentes y reserva de competencia."
+      },
+      {
+        "ley": "Código Penal",
+        "articulo": "Art. 239",
+        "relevancia": "Apercibimiento aplicable en caso de desobediencia a las medidas cautelares dispuestas."
+      },
+      {
+        "ley": "Código Civil y Comercial de la Nación",
+        "articulo": "Art. 804",
+        "relevancia": "Fundamento para la aplicación de multa en caso de incumplimiento de las medidas."
+      }
+    ],
+    "low_confidence_reason": null,
+    "draft_text": "EXPEDIENTE N° case-7ce90834\nJUZGADO DE FAMILIA N° 2 – DEPARTAMENTO JUDICIAL LA MATANZA\n\nSan Justo, [FECHA DEL SISTEMA].-\n\nAUTOS Y VISTOS:\n\nY CONSIDERANDO:\n\nI.- Que se recepciona en este Juzgado denuncia por violencia familiar formulada por [NOMBRE Y APELLIDO DE LA DENUNCIANTE – DATO RESERVADO EN SECRETARÍA], de nacionalidad paraguaya, con domicilio en el Partido de La Matanza, en la que se reportan agresiones físicas, amenazas y acceso a arma por parte del denunciado [NOMBRE Y APELLIDO DEL DENUNCIADO – DATO RESERVADO EN SECRETARÍA], con quien la denunciante mantiene o ha mantenido una relación de convivencia, encontrándose en situación de separación reciente o en trámite. Del relato y del resumen estructurado del caso surge asimismo la presencia de menores de edad convivientes expuestos a la situación de violencia.\n\nII.- Sin perjuicio de la competencia, de la que se formula expresa reserva (art. 196 del C.P.C.C.), teniendo en cuenta que las resoluciones dictadas en el marco de la presente revisten carácter urgente y cautelar, por un breve plazo, atendiendo que la finalidad principal de la norma es hacer cesar el denunciado e hipotético riesgo que pesa sobre las presuntas víctimas, bastando la mera sospecha de maltrato, por lo que en modo alguno implica una decisión sobre la autoría o no de los hechos atribuidos, este Tribunal advierte que la concurrencia de los siguientes indicadores de riesgo alto —agresiones físicas reportadas, amenazas, acceso reportado a arma, presencia de menores convivientes expuestos a la violencia y situación de separación reciente— configura un cuadro de urgencia que justifica la adopción inmediata de medidas de protección de mayor intensidad, conforme lo establecido por el Protocolo de Valoración de Riesgo en Violencia Familiar y la jurisprudencia del fuero (conf. fallo_001 de este Departamento Judicial).\n\nLas conductas denunciadas encuadran en las modalidades de violencia física y psicológica definidas en el art. 4 de la Ley 26.485, y la situación de vulnerabilidad de la denunciante —mujer migrante, ama de casa sin ingresos propios declarados y con posible aislamiento de redes de contención— refuerza la obligación de este Tribunal de adoptar medidas protectorias urgentes en los términos de los arts. 3, 5, 7, 11 y 12 de la Ley 12.569, art. 5° del Decreto 2875/05, art. 26 incs. a.1, a.2, a.3, a.4, b.2 y b.3 de la Ley 26.485, arts. 3 y 4 de la Convención de Belém do Pará (Ley 24.632), arts. 5 pto. 1, 19 y 25 pto. 1 del Pacto de San José de Costa Rica (Ley 23.054), art. 75 inc. 22 de la Constitución Nacional, y arts. 197, 232, 384 y 827 inc. t del C.P.C.C.\n\nIII.- Por lo expuesto, SE RESUELVE PROPONER las siguientes medidas cautelares provisorias, por el plazo de NOVENTA (90) DÍAS, susceptible de ser prorrogado en caso de ser necesario, bajo apercibimiento para el caso de desobediencia o incumplimiento de dar intervención al Señor Fiscal en lo Penal que por turno corresponda (art. 239 del Código Penal) y multa conforme lo dispuesto por el art. 804 del Código Civil y Comercial de la Nación:\n\n1°) LA EXCLUSIÓN del hogar familiar sito en [DOMICILIO RESERVADO EN SECRETARÍA], Partido de La Matanza, del denunciado [NOMBRE Y APELLIDO DEL DENUNCIADO – DATO RESERVADO EN SECRETARÍA], con la advertencia de que no podrá regresar al mismo, aún vencido dicho plazo, sin orden expresa de este Juzgado, atribuyéndose la vivienda por el tiempo que dure la medida a la denunciante [NOMBRE Y APELLIDO DE LA DENUNCIANTE – DATO RESERVADO EN SECRETARÍA].\n\n2°) LA PROHIBICIÓN DE ACERCAMIENTO del denunciado [NOMBRE Y APELLIDO DEL DENUNCIADO – DATO RESERVADO EN SECRETARÍA] a la persona de la denunciante [NOMBRE Y APELLIDO DE LA DENUNCIANTE – DATO RESERVADO EN SECRETARÍA] y a los menores convivientes, hasta un radio de TRESCIENTOS (300) METROS a la redonda del domicilio de la actora, como del lugar de trabajo, estudio y/o esparcimiento de los mismos, debiendo cesar y abstenerse de todo acto violento de carácter físico, psicológico o emocional, por toda vía de contacto posible.\n\n3°) OTORGAR a la denunciante [NOMBRE Y APELLIDO DE LA DENUNCIANTE – DATO RESERVADO EN SECRETARÍA] EL CUIDADO PERSONAL PROVISORIO de los menores convivientes, por el tiempo que dure la medida, ordenándose al denunciado abstenerse de interferir en el ejercicio de dicho cuidado (conf. art. 26 inc. b.3, Ley 26.485).\n\n4°) A fin de efectivizar la medida de exclusión dispuesta, líbrese OFICIO POLICIAL con habilitación de días y horas inhábiles, facultando al personal policial a allanar el domicilio denunciado y, en caso de ser necesario, utilizar los servicios de un cerrajero y violentar candados y/o cerraduras, procediendo al cambio de las mismas. En el mismo acto se atribuirá el hogar familiar a la denunciante, quien será designada depositaria de los bienes muebles que se encontraren en la vivienda, respecto de los cuales se realizará un prolijo inventario. El denunciado podrá retirar en el mismo acto sus efectos personales. Asimismo, el personal policial interviniente, en caso de existir riesgo cierto e inminente para la persona del denunciado o para terceros, deberá arbitrar los medios para que se le practique una evaluación psiquiátrica por ante el Hospital Dr. Diego Paroissien, procediendo de acuerdo a los resultados de ella.\n\n5°) Hacer saber a las partes que deberán concurrir dentro de las CUARENTA Y OCHO (48) HORAS a los centros especializados en violencia familiar donde sean derivados, previa comunicación a la Mesa Local de Violencia (Secretaría de Desarrollo Social, Municipalidad de La Matanza), al 4484-2858/7898/7899, o al programa provincial, al 0800-555-0137 (24 hs.), o Dirección de Política de Género Municipal, Rivadavia N° 13.518, Ramos Mejía (4654-7454 int. 137), donde deberán efectuarles el informe transdisciplinario del art. 8 de la Ley 12.569.\n\n6°) Cítase a la denunciante para que dentro de las CUARENTA Y OCHO (48) HORAS de notificada, en el horario de 08:00 a 11:00 hs., comparezca a la sede de este Juzgado."
+  },
+  "alerts": [
+    "ALERTA_CRITICA: priorizar intervencion y notificacion con acuse."
+  ]
+}

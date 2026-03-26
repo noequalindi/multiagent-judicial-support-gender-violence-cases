@@ -1,0 +1,165 @@
+{
+  "case_id": "case-2c41ddfe",
+  "extracted_case": {
+    "case_id": "case-2c41ddfe",
+    "anonymized_text": "N* de VO: FV00002494-[DNI_REDACTED]/2026 | Pp: |\n[PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] V/O [PERSONA_REDACTED] [PERSONA_REDACTED]\nRelato del hecho\nRelato\n[PERSONA_REDACTED]:\nAun AQQÑ0ÓPQP— o o »P> oa 5yPg_/0QEO0 QEQERQRQRQPQP—\nrefiere que mantuvo una relacion de concubinato por el lapso de cinco años, con el sr Acevedo Alan Jonathan (32) de cuya relación\nposeen dos de nombre Dante Acevedo(4) y owen Acevedo(2).- Menciona que la relacion cu'mino debido a que la dicente sufría\nviolencia de genero, por lo que realizo una denuncia anterior pero al no tener donde vivir continuo convivienco en el mencionado. Es\nasi que en la fecha tras ya confirmar su mudanza a un alquiler es que su ex pareja ACEVEDO le manifesto que no le va a permitir que\nse lleve a sus hijos, como asi sus pertenencias por ello desea solicitar de manera urgente la restitucion de sus hijos y restitución de\n| pertenencias, como asi un perimetro de seguridad fines de resguardar su integridad psicofisica y la de sus hijos.-\nDatos probatorios\nDatos probatorios ;\n[PERSONA_REDACTED]\nA A A A A A A A A A A A A A A ct\n¿Aporta documentación en este acto? Ho\n¿Aporta efectos en este acto? No\n| Adjuntos - Evidencias\nA A A A A A A A A A AAA\nEscaneado con CamScanner\n\nSe0eSTIRIO O de [PERSONA_REDACTED] FR\n1 Zo [PERSONA_REDACTED] des)\nh Ju ua\nA A NN\nN\n! N? de VG: FV00002494-[DNI_REDACTED]/2026 | pp: |\n| [PERSONA_REDACTED] [PERSONA_REDACTED] [PERSONA_REDACTED] Y/O [PERSONA_REDACTED] [PERSONA_REDACTED] El presente integra y es el extracto de la denuncia formulada en el día de la fecha, cuyo contenido es leído y ratificado por la/s persona/s denunciante/s\nmE\n- La persona compareciente ha sido impuesta de las penas con que la ley castiga al/la falso/a denunciante a tenor de los art. 245 y 275 del Código Penal, y\n] prestado juramento (o promesa) de decir verdad de todo lo que supiere, manifestare o le fuere preguntado.\ny La/el denunciante solicita que se envíe esta denuncia al medio digital seleccionado, en caso de requerirse se entregará copía impresa. Asimismo, se le hacen\nsaber los derechos que le asisten, transcribiéndolos en la denuncia que se le envía al medio digital seleccionado\nae AZ 7 ho\nA, 77\nPARE Ap\nY a” Hoy La “4, ]\n3 Ey Ñ E .\nNombre: KALE/U ¿ES 2 “tx hFunciónario:[PERSONA_REDACTED]\n- Apellido: Domtfo Mz S /.. J/ Jeralgdia: SUBCOMISARIO (CDO)\n- Documento: SOICULMTTA 1 0 eS Legajo: 169676\nE ? cil\n? 1\n' 1]\n1\nj\n¡\n4\n1\n1\n|\n|\nEscaneado con CamScanner",
+    "facts": [
+      "Hechos a validar por operador humano."
+    ],
+    "active_measures": [
+      "Evaluar medidas cautelares urgentes"
+    ],
+    "risk_factors": [
+      "NNA involucrados"
+    ],
+    "timeline": [
+      "Ingreso de denuncia",
+      "Evaluacion interdisciplinaria inicial"
+    ]
+  },
+  "retrieval": [
+    {
+      "query": "Hechos a validar por operador humano.",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "relevance_score": 0.55
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "relevance_score": 0.55
+        },
+        {
+          "source_id": "medida_impedimento_contacto_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario.Por recibido.En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cauterlar resérvese en Secretarìa (conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normat",
+          "relevance_score": 0.55
+        }
+      ]
+    },
+    {
+      "query": "Evaluar medidas cautelares urgentes",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "relevance_score": 0.8
+        },
+        {
+          "source_id": "medida_perimetro_cpcc_art232",
+          "excerpt": "a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC",
+          "relevance_score": 0.75
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "relevance_score": 0.55
+        }
+      ]
+    },
+    {
+      "query": "NNA involucrados",
+      "hits": [
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "relevance_score": 0.55
+        }
+      ]
+    },
+    {
+      "query": "Hechos a validar por operador humano. Evaluar medidas cautelares urgentes NNA involucrados",
+      "hits": [
+        {
+          "source_id": "medida_perimetro_template",
+          "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+          "relevance_score": 0.55
+        },
+        {
+          "source_id": "medida_exclusion_template",
+          "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+          "relevance_score": 0.55
+        },
+        {
+          "source_id": "medida_abstencion_violencia_template",
+          "excerpt": "···········Carátula de la Causa.- ··············EXPEDIENTE N° Identificación de la Causa.- ··············REGISTRO N° ......- San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario . Por recibido.- En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cautelar resérvese en Secretarìa ( conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normativa recientemente implementada (Art. 41 inc B del Acuerdo N°3397), acumúle",
+          "relevance_score": 0.467
+        }
+      ]
+    }
+  ],
+  "draft": {
+    "decision_draft": "Borrador no vinculante: se sugiere evaluar medidas cautelares urgentes con enfoque de proteccion integral y seguimiento interdisciplinario. Template sugerido: Impedimento de contacto por todo medio (medida_impedimento_contacto).",
+    "checklist": [
+      "Verificar hechos y medidas vigentes en el expediente digital.",
+      "Confirmar competencia y jurisdiccion.",
+      "Revisar procedencia normativa de cada medida sugerida.",
+      "Completar los placeholders del template con datos del expediente.",
+      "Validar el borrador por operador humano antes de firma."
+    ],
+    "suggested_measures": [
+      "Impedimento de contacto por cualquier via"
+    ],
+    "selected_template_id": "medida_impedimento_contacto",
+    "selected_template_name": "Impedimento de contacto por todo medio",
+    "template_text": "RESUELVO: 1) Impedimento de contacto de {{nombre_denunciado}} con {{nombre_denunciante}} por todo medio, incluyendo {{medios_contacto_alcanzados}}. 2) Cese de hostigamiento y abstencion de actos de violencia fisica, psicologica o emocional. 3) Vigencia provisoria por 90 dias, prorrogable.",
+    "fields_to_fill": [
+      "caratula_causa",
+      "expediente_numero",
+      "registro_numero",
+      "fecha_resolucion",
+      "nombre_denunciante",
+      "nombre_denunciado",
+      "medios_contacto_alcanzados"
+    ],
+    "risk_band": "high",
+    "abstention": false,
+    "abstention_reason": null,
+    "citations": [
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "relevance_score": 0.55
+      },
+      {
+        "source_id": "medida_exclusion_template",
+        "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+        "relevance_score": 0.55
+      },
+      {
+        "source_id": "medida_impedimento_contacto_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (de Mes de Año). Iniciales del Usuario.Por recibido.En atención a la especial naturaleza del proceso de protección contra la violencia familiar y su carácter de cauterlar resérvese en Secretarìa (conf. ar. 197 del Cod. Procesal) . SI CORRESPONDE En virtud de la normat",
+        "relevance_score": 0.55
+      },
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "relevance_score": 0.8
+      },
+      {
+        "source_id": "medida_perimetro_cpcc_art232",
+        "excerpt": "a los fines de proteger a la denunciante, como medida cautelar y con fundamento en el art. 232 del CPCC",
+        "relevance_score": 0.75
+      },
+      {
+        "source_id": "medida_exclusion_template",
+        "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+        "relevance_score": 0.55
+      },
+      {
+        "source_id": "medida_exclusion_template",
+        "excerpt": "Codigo de barras de la causa \"Carátula de la Causa\" EXPEDIENTE N° Identificación de la Causa REGISTRO N°:....... San Justo, Fecha del Sistema (de Mes de Año) Iniciales del Usuario.Proveyendo la presentación venida a despacho: Téngase presente el informe elaborado.AUTOS Y VISTOS: El informe venido a despacho, el cual concluye \"PONER CONCLUSION\".Y CONSIDERANDO: I.- Que en fecha 3/12/20 se agrega denuncia policial de NOMBRE y APELLIDO de la Víctima, , solicita la exclusión del hogar y perímetro de ",
+        "relevance_score": 0.55
+      },
+      {
+        "source_id": "medida_perimetro_template",
+        "excerpt": "Código de barras del trámite Código de barras del trámite en números ················\"Carátula de la Causa\" ·················EXPEDIENTE N°Identificación de la Causa ·················REGISTRO N°:........ San Justo, Fecha del Sistema (Día de Mes de Año).-inicialar.········AUTOS Y VISTOS: ········Y CONSIDERANDO: ········I- Ante la denuncia efectuada por APELLIDO y NOMBRE del Actor ante la Comisaría de la Mujer y la Familia Departamental obrante a fs. fs. de la denuncia, conforme lo prescriben el ar",
+        "relevance_score": 0.55
+      }
+    ]
+  },
+  "alerts": [
+    "ALERTA_CRITICA: priorizar intervencion y notificacion con acuse."
+  ]
+}

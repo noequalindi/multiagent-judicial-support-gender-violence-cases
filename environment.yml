@@ -11,6 +11,8 @@ dependencies:
       - fastapi>=0.115.0
       - httpx>=0.27.0
       - jsonschema>=4.22.0
+      - langgraph>=0.2.56
+      - loguru>=0.7.2
       - pydantic>=2.7.0
       - python-dotenv>=1.0.1
       - python-multipart>=0.0.9
