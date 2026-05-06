@@ -13,7 +13,7 @@ def build_json_llm_client(provider: str, model: str | None = None) -> tuple[obje
         raise RuntimeError(f"Unknown provider '{provider}'.")
 
     api_key = os.getenv(f"{spec.env_prefix}_API_KEY", "").strip()
-    if not api_key:
+    if provider != "ollama" and not api_key:
         raise RuntimeError(f"Provider '{provider}' is not configured in environment variables.")
 
     base_url = os.getenv(f"{spec.env_prefix}_BASE_URL", "").strip() or spec.default_base_url

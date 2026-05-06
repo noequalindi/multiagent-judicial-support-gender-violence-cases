@@ -20,8 +20,8 @@ class TemplateAgent:
     _catalog: dict[str, JudicialTemplate] = {
         "medida_perimetro": JudicialTemplate(
             template_id="medida_perimetro",
-            name="Prohibicion de acercamiento (radio)",
-            measures=["Prohibicion de acercamiento"],
+            name="Medida perimetral (radio)",
+            measures=["Medida perimetral"],
             fields_to_fill=[
                 "caratula_causa",
                 "expediente_numero",
@@ -33,7 +33,7 @@ class TemplateAgent:
                 "radio_metros",
             ],
             text=(
-                "RESUELVO: 1) Prohibicion de que {{nombre_denunciado}} se aproxime a "
+                "RESUELVO: 1) Disponer medida perimetral para que {{nombre_denunciado}} no se aproxime a "
                 "{{nombre_denunciante}} hasta un radio de {{radio_metros}} metros "
                 "del domicilio {{domicilio_protegido}}, lugar de trabajo, estudio y esparcimiento. "
                 "2) Vigencia provisoria por 90 dias, prorrogable. "
@@ -42,10 +42,10 @@ class TemplateAgent:
         ),
         "medida_exclusion": JudicialTemplate(
             template_id="medida_exclusion",
-            name="Exclusion del hogar + restriccion de acercamiento",
+            name="Exclusion del hogar + medida perimetral",
             measures=[
                 "Exclusion del hogar del agresor",
-                "Prohibicion de acercamiento",
+                "Medida perimetral",
                 "Cuidado personal provisorio de NNA",
             ],
             fields_to_fill=[
@@ -62,7 +62,7 @@ class TemplateAgent:
             text=(
                 "RESUELVO: 1) Exclusion de {{nombre_denunciado}} del hogar familiar en "
                 "{{domicilio_hogar_familiar}} y atribucion provisoria de la vivienda a "
-                "{{nombre_denunciante}}. 2) Prohibicion de acercamiento en un radio de "
+                "{{nombre_denunciante}}. 2) Disponer medida perimetral en un radio de "
                 "{{radio_metros}} metros respecto de {{nombre_denunciante}} y {{nombres_nna}}. "
                 "3) Cuidado personal provisorio de NNA por el plazo de vigencia de la medida. "
                 "4) Librense oficios de cumplimiento urgente."
@@ -117,7 +117,7 @@ class TemplateAgent:
         if "exclusion" in measures_text or "convivencia" in risk_text:
             return self._catalog["medida_exclusion"]
 
-        if "prohibicion de acercamiento" in measures_text or "amenaza" in facts_text:
+        if "prohibicion de acercamiento" in measures_text or "medida perimetral" in measures_text or "amenaza" in facts_text:
             return self._catalog["medida_perimetro"]
 
         if "sin factores automaticos concluyentes" in risk_text:

@@ -6,10 +6,36 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from src.scripts.build_measure_corpus import load_external_corpora, resolve_external_corpus_dirs
+from src.scripts.build_measure_corpus import build_manifest, load_external_corpora, resolve_external_corpus_dirs
 
 
 class BuildMeasureCorpusTests(unittest.TestCase):
+    def test_build_manifest_emits_stable_ids_and_checksums(self) -> None:
+        manifest = build_manifest(
+            [
+                {
+                    "_id": "ley_1",
+                    "source_id": "ley_1",
+                    "source_type": "normativa",
+                    "title": "Ley 1",
+                    "text": "Texto ley 1",
+                },
+                {
+                    "_id": "medida_perimetro_template",
+                    "source_type": "template",
+                    "template_id": "medida_perimetro",
+                    "title": "Perímetro",
+                    "text": "Texto plantilla",
+                },
+            ],
+            Path("data/legal/templates/measure_corpus.jsonl"),
+        )
+
+        self.assertEqual(manifest["record_count"], 2)
+        self.assertEqual(manifest["records"][0]["_id"], "ley_1")
+        self.assertTrue(manifest["records"][0]["checksum"])
+        self.assertEqual(manifest["records"][1]["template_id"], "medida_perimetro")
+
     def test_resolve_external_corpus_dirs_supports_normativas_plural(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

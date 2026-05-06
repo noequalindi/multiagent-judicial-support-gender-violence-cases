@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import subprocess
 import tempfile
 from pathlib import Path
@@ -35,6 +36,14 @@ class OCRAgent:
                     texts.append(self._ocr_page_tesseract(img, lang=tesseract_lang))
                 elif backend == "ollama":
                     texts.append(self._ocr_page_ollama(img, model=ollama_model))
+                elif backend == "hybrid":
+                    texts.append(
+                        self._ocr_page_hybrid(
+                            img,
+                            lang=tesseract_lang,
+                            model=ollama_model,
+                        )
+                    )
                 else:
                     raise ValueError(f"Unsupported OCR backend: {backend}")
             return "\n\n".join(t.strip() for t in texts if t and t.strip())
@@ -100,3 +109,54 @@ class OCRAgent:
             if not isinstance(content, str):
                 raise RuntimeError(f"Ollama response without message.content: {json.dumps(data)[:500]}")
             return content
+
+    def _ocr_page_hybrid(self, image_path: Path, lang: str, model: str) -> str:
+        try:
+            tesseract_text = self._ocr_page_tesseract(image_path, lang=lang)
+        except Exception:
+            return self._ocr_page_ollama(image_path, model=model)
+
+        if self._is_low_quality_ocr(tesseract_text):
+            try:
+                return self._ocr_page_ollama(image_path, model=model)
+            except Exception:
+                return tesseract_text
+        return tesseract_text
+
+    @staticmethod
+    def _is_low_quality_ocr(text: str) -> bool:
+        normalized = (text or "").strip()
+        if len(normalized) < 80:
+            return True
+
+        lines = [line.strip() for line in normalized.splitlines() if line.strip()]
+        if not lines:
+            return True
+
+        alpha_count = sum(ch.isalpha() for ch in normalized)
+        digit_count = sum(ch.isdigit() for ch in normalized)
+        weird_count = sum(
+            1
+            for ch in normalized
+            if not (ch.isalnum() or ch.isspace() or ch in ".,;:()[]{}-_/\"'%+")
+        )
+        very_short_lines = sum(1 for line in lines if len(line) <= 3)
+        garbage_lines = sum(
+            1
+            for line in lines
+            if re.fullmatch(r"[A-Za-z0-9|/\\'\"`´.,()\-]{1,3}", line or "")
+        )
+
+        char_count = max(len(normalized), 1)
+        weird_ratio = weird_count / char_count
+        alpha_ratio = alpha_count / char_count
+        short_ratio = very_short_lines / max(len(lines), 1)
+        garbage_ratio = garbage_lines / max(len(lines), 1)
+
+        return (
+            weird_ratio > 0.08
+            or alpha_ratio < 0.35
+            or (digit_count > alpha_count and alpha_count < 120)
+            or short_ratio > 0.35
+            or garbage_ratio > 0.2
+        )

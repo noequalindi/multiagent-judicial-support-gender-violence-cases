@@ -52,6 +52,15 @@ This environment includes:
 - `poppler`
 - FastAPI, Streamlit, Pydantic, JSON Schema validation, and HTTP client dependencies
 
+Optional for stronger local anonymization in Spanish:
+
+```bash
+python -m spacy download es_core_news_md
+```
+
+If the spaCy model is not installed, the pipeline keeps working with the
+existing regex and Presidio-based anonymization layers.
+
 ## Shell Scripts
 
 Operational commands are exposed through `bash` scripts under `scripts/`:
@@ -69,11 +78,17 @@ Main scripts:
 - `bash scripts/run_batch_langgraph.sh data/incoming`
 - `bash scripts/build_legal_corpus.sh`
 - `bash scripts/upsert_legal_corpus.sh`
+- `bash scripts/generate_synthetic_cases.sh`
 - `bash scripts/run_api.sh`
 - `bash scripts/run_ui.sh`
 - `bash scripts/run_tests.sh`
 
 These scripts accept environment variables such as `PYTHON_BIN`, `OCR_BACKEND`, `TESSERACT_LANG`, `OLLAMA_MODEL`, `INPUT_DIR`, `OUT_DIR`, and `WORKERS`.
+
+Relevant optional anonymization variables:
+
+- `SPACY_ANONYMIZATION_ENABLED=1`
+- `SPACY_MODEL=es_core_news_md`
 
 ## Make Targets
 
@@ -91,6 +106,7 @@ Main targets:
 - `make batch-langgraph INPUT_DIR=data/incoming`
 - `make build-legal-corpus`
 - `make upsert-legal-corpus`
+- `make generate-synthetic-cases`
 - `make api`
 - `make ui`
 
@@ -140,6 +156,10 @@ export PINECONE_NAMESPACE="__default__"
 export PINECONE_TEXT_FIELD="text"
 export PINECONE_API_VERSION="2025-10"
 export PINECONE_EMBEDDING_MODEL="multilingual-e5-large"
+export CHUNK_MAX_TOKENS="300"
+export CHUNK_OVERLAP_TOKENS="50"
+# Optional: explicit tokenizer override for future embedding models
+export CHUNK_TOKENIZER_NAME=""
 ```
 
 Upsert the legal corpus:
@@ -156,6 +176,15 @@ python -m src.scripts.upsert_chunks_to_pinecone --jsonl data/processed/denuncia_
 ```
 
 After this, `RetrievalAgent` automatically uses Pinecone when env vars are present.
+
+Chunking is token-aware. By default, the project resolves the tokenizer from
+`PINECONE_EMBEDDING_MODEL` and uses `CHUNK_MAX_TOKENS` / `CHUNK_OVERLAP_TOKENS`
+to keep complaint fragments aligned with the embedding model context window.
+
+If Pinecone is unavailable or a search request fails, retrieval falls back
+automatically to a local hybrid mode over the legal corpus, combining BM25 and
+lexical scoring. This keeps the pipeline operational without internet access,
+although with lower semantic recall than the vector index.
 
 ## Concurrent Batch Processing (Folder)
 
@@ -202,6 +231,58 @@ The graph performs:
 3. manifest generation with success/error rows
 
 Outputs are written under `data/processed/langgraph_batch_<timestamp>/`.
+
+## Synthetic Complaint Generation with Claude
+
+There is now a dedicated synthetic-data generation module that uses Claude to
+create new complaint narratives from a small set of real anonymized seed cases
+with known applied measures.
+
+Current seeds are declared in:
+
+- `data/synthetic/seed_cases.json`
+
+The default setup uses three court-provided complaint examples:
+
+- `caso_exclusion.pdf` -> `medida_exclusion`
+- `caso_perimetro.pdf` -> `medida_perimetro`
+- `caso_perimetro_1.pdf` -> `medida_perimetro`
+
+The generator is intentionally scoped to La Matanza / Provincia de Buenos Aires
+and does not use the CABA case-law PDFs as synthetic complaint seeds.
+
+Run it with:
+
+```bash
+bash scripts/generate_synthetic_cases.sh
+```
+
+Or with explicit parameters:
+
+```bash
+SEED_MANIFEST="data/synthetic/seed_cases.json" \
+OUT_JSONL="data/synthetic/synthetic_cases.jsonl" \
+PER_SEED=5 \
+CLAUDE_MODEL="claude-sonnet-4-6" \
+bash scripts/generate_synthetic_cases.sh
+```
+
+Equivalent `make` target:
+
+```bash
+make generate-synthetic-cases PER_SEED=5
+```
+
+The output is a JSONL dataset of synthetic complaints, each one tagged with:
+
+- synthetic identifier
+- seed provenance
+- target measure label
+- jurisdiction metadata
+- violence types
+- risk factors
+- facts summary
+- synthetic complaint text
 
 ## Generate Filled Measure Document (TXT + PDF)
 

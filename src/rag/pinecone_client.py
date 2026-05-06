@@ -86,3 +86,10 @@ class PineconeTextIndexClient:
             )
             resp.raise_for_status()
             return resp.json() if resp.content else {"status": "ok"}
+
+    def delete_namespace_records(self) -> dict[str, Any]:
+        url = f"{self.base}/namespaces/{self.cfg.namespace}"
+        with httpx.Client(timeout=60.0) as client:
+            resp = client.delete(url, headers=self.headers)
+            resp.raise_for_status()
+            return resp.json() if resp.content else {"status": "ok"}

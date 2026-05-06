@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -176,6 +178,40 @@ def load_external_corpora(paths: list[Path]) -> list[dict[str, Any]]:
     return rows
 
 
+def record_checksum(row: dict[str, Any]) -> str:
+    payload = json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def build_manifest(rows: list[dict[str, Any]], corpus_path: Path) -> dict[str, Any]:
+    manifest_rows: list[dict[str, str]] = []
+    for row in rows:
+        record_id = str(row.get("_id") or row.get("source_id") or "").strip()
+        if not record_id:
+            continue
+        manifest_rows.append(
+            {
+                "_id": record_id,
+                "source_id": str(row.get("source_id") or record_id).strip(),
+                "source_type": str(row.get("source_type", "")).strip(),
+                "template_id": str(row.get("template_id", "")).strip(),
+                "title": str(row.get("title", "")).strip(),
+                "checksum": record_checksum(row),
+            }
+        )
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "corpus_path": str(corpus_path),
+        "record_count": len(manifest_rows),
+        "records": manifest_rows,
+    }
+
+
+def write_manifest(path: Path, manifest: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def resolve_external_corpus_dirs(root: Path) -> list[Path]:
     candidates = [
         root / "data" / "legal" / "normativas",
@@ -205,12 +241,18 @@ def main() -> None:
         default="data/legal/templates/measure_corpus.jsonl",
         help="Output JSONL path.",
     )
+    parser.add_argument(
+        "--manifest-out",
+        default="data/legal/templates/measure_corpus.manifest.json",
+        help="Output manifest path with ids and checksums for incremental refresh.",
+    )
     args = parser.parse_args()
 
     root = Path.cwd()
     catalog_path = (root / args.catalog).resolve()
     measures_dir = (root / args.measures_dir).resolve()
     out_path = (root / args.out).resolve()
+    manifest_path = (root / args.manifest_out).resolve()
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows: list[dict[str, Any]] = []
@@ -228,8 +270,12 @@ def main() -> None:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
+    manifest = build_manifest(rows, out_path)
+    write_manifest(manifest_path, manifest)
+
     print(f"Generated corpus rows: {len(rows)}")
     print(f"Output: {out_path}")
+    print(f"Manifest: {manifest_path}")
 
 
 if __name__ == "__main__":

@@ -94,34 +94,107 @@ def _pdf_escape(text: str) -> str:
 
 def text_to_simple_pdf(text: str, pdf_path: Path) -> None:
     """
-    Minimal dependency-free PDF writer for monospaced text.
-    Generates A4 pages and wraps lines by character count.
+    Minimal dependency-free PDF writer with simple title/section styling.
+    Supports:
+    - `# ` top-level titles
+    - `## ` / `### ` section headings
+    - `- ` bullet items
     """
-    max_chars = 95
-    max_lines = 60
-    wrapped_lines: list[str] = []
+    page_width = 595
+    page_height = 842
+    left_margin = 42
+    right_margin = 42
+    top_margin = 800
+    bottom_margin = 54
+
+    style_map = {
+        "title": {"font": "F2", "font_size": 16, "leading": 22, "max_chars": 60},
+        "section": {"font": "F2", "font_size": 13, "leading": 18, "max_chars": 74},
+        "bullet": {"font": "F1", "font_size": 10, "leading": 14, "max_chars": 92},
+        "body": {"font": "F1", "font_size": 10, "leading": 13, "max_chars": 96},
+        "blank": {"font": "F1", "font_size": 10, "leading": 10, "max_chars": 1},
+    }
+
+    styled_lines: list[dict[str, str | int]] = []
     for raw in (text or "").splitlines():
         line = raw.rstrip()
         if not line:
-            wrapped_lines.append("")
+            styled_lines.append({"style": "blank", "text": ""})
             continue
-        while len(line) > max_chars:
-            wrapped_lines.append(line[:max_chars])
-            line = line[max_chars:]
-        wrapped_lines.append(line)
 
-    if not wrapped_lines:
-        wrapped_lines = [" "]
+        style = "body"
+        content = line
+        if line.startswith("# "):
+            style = "title"
+            content = line[2:].strip()
+        elif line.startswith("## "):
+            style = "section"
+            content = line[3:].strip()
+        elif line.startswith("### "):
+            style = "section"
+            content = line[4:].strip()
+        elif line.startswith("- "):
+            style = "bullet"
+            content = line[2:].strip()
 
-    pages = [wrapped_lines[i : i + max_lines] for i in range(0, len(wrapped_lines), max_lines)]
+        max_chars = int(style_map[style]["max_chars"])
+        if style == "bullet":
+            bullet_prefix = "- "
+            first_line = True
+            remaining = content
+            while remaining:
+                if len(remaining) <= max_chars:
+                    prefix = bullet_prefix if first_line else "  "
+                    styled_lines.append({"style": style, "text": f"{prefix}{remaining}"})
+                    remaining = ""
+                else:
+                    split_at = remaining.rfind(" ", 0, max_chars)
+                    if split_at <= 0:
+                        split_at = max_chars
+                    chunk = remaining[:split_at].strip()
+                    prefix = bullet_prefix if first_line else "  "
+                    styled_lines.append({"style": style, "text": f"{prefix}{chunk}"})
+                    remaining = remaining[split_at:].strip()
+                first_line = False
+            continue
+
+        remaining = content
+        while remaining:
+            if len(remaining) <= max_chars:
+                styled_lines.append({"style": style, "text": remaining})
+                remaining = ""
+            else:
+                split_at = remaining.rfind(" ", 0, max_chars)
+                if split_at <= 0:
+                    split_at = max_chars
+                styled_lines.append({"style": style, "text": remaining[:split_at].strip()})
+                remaining = remaining[split_at:].strip()
+
+    if not styled_lines:
+        styled_lines = [{"style": "body", "text": " "}]
+
+    pages: list[list[dict[str, str | int]]] = []
+    current_page: list[dict[str, str | int]] = []
+    current_y = top_margin
+    for line in styled_lines:
+        style = str(line["style"])
+        leading = int(style_map[style]["leading"])
+        if current_page and current_y - leading < bottom_margin:
+            pages.append(current_page)
+            current_page = []
+            current_y = top_margin
+        current_page.append(line)
+        current_y -= leading
+    if current_page:
+        pages.append(current_page)
 
     objects: list[bytes] = []
     page_obj_ids: list[int] = []
     content_obj_ids: list[int] = []
 
     # Object numbering plan:
-    # 1: Catalog, 2: Pages root, 3: Font
-    next_id = 4
+    # 1: Catalog, 2: Pages root, 3: Helvetica, 4: Helvetica-Bold
+    next_id = 5
     for _ in pages:
         page_obj_ids.append(next_id)
         next_id += 1
@@ -129,11 +202,27 @@ def text_to_simple_pdf(text: str, pdf_path: Path) -> None:
         next_id += 1
 
     for lines in pages:
-        content_lines = ["BT", "/F1 10 Tf", "40 800 Td", "12 TL"]
-        for ln in lines:
-            content_lines.append(f"({_pdf_escape(ln)}) Tj")
-            content_lines.append("T*")
-        content_lines.append("ET")
+        content_lines: list[str] = []
+        y = top_margin
+        for item in lines:
+            style = str(item["style"])
+            text_line = str(item["text"])
+            font = str(style_map[style]["font"])
+            font_size = int(style_map[style]["font_size"])
+            leading = int(style_map[style]["leading"])
+            if style == "blank":
+                y -= leading
+                continue
+            content_lines.extend(
+                [
+                    "BT",
+                    f"/{font} {font_size} Tf",
+                    f"1 0 0 1 {left_margin} {y} Tm",
+                    f"({_pdf_escape(text_line)}) Tj",
+                    "ET",
+                ]
+            )
+            y -= leading
         stream = "\n".join(content_lines).encode("latin-1", errors="replace")
         obj = b"<< /Length " + str(len(stream)).encode() + b" >>\nstream\n" + stream + b"\nendstream"
         objects.append(obj)
@@ -148,12 +237,17 @@ def text_to_simple_pdf(text: str, pdf_path: Path) -> None:
     kids = " ".join(f"{pid} 0 R" for pid in page_obj_ids).encode()
     obj_map[2] = b"<< /Type /Pages /Kids [ " + kids + b" ] /Count " + str(len(page_obj_ids)).encode() + b" >>"
     obj_map[3] = b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"
+    obj_map[4] = b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>"
 
     for idx, page_id in enumerate(page_obj_ids):
         content_id = content_obj_ids[idx]
         obj_map[page_id] = (
-            b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] "
-            b"/Resources << /Font << /F1 3 0 R >> >> "
+            b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 "
+            + str(page_width).encode()
+            + b" "
+            + str(page_height).encode()
+            + b"] "
+            b"/Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> "
             b"/Contents "
             + str(content_id).encode()
             + b" 0 R >>"

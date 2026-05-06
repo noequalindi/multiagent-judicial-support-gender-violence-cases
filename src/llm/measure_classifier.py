@@ -2,12 +2,14 @@ from __future__ import annotations
 import os
 
 from src.agents.template_agent import TemplateAgent
+from src.legal.source_catalog import LegalSourceCatalog
 from src.llm.client_factory import build_json_llm_client
 from src.llm.measure_classifier_prompts import (
     CLAUDE_MEASURE_CLASSIFICATION_SYSTEM_PROMPT,
     build_claude_measure_classification_user_prompt,
     build_generic_measure_classification_system_prompt,
     build_generic_measure_classification_user_prompt,
+    normalize_prompt_variant,
 )
 from src.llm.safety import assert_safe_for_external_llm
 from src.logging import get_logger
@@ -16,6 +18,7 @@ from src.models.contracts import (
     ExtractedCase,
     LegalBasisItem,
     MeasureClassification,
+    OfficialSource,
     RetrievalResult,
 )
 
@@ -23,6 +26,7 @@ from src.models.contracts import (
 class MeasureClassifierService:
     def __init__(self) -> None:
         self.template_agent = TemplateAgent()
+        self.source_catalog = LegalSourceCatalog()
         self.logger = get_logger("measure_classifier")
 
     @staticmethod
@@ -99,12 +103,103 @@ class MeasureClassifierService:
                     return "\n\n".join(fragments)
         return "\n\n".join(fragments)
 
+    def _build_official_sources(
+        self,
+        retrieval: list[RetrievalResult],
+        supporting_source_ids: list[str],
+    ) -> list[OfficialSource]:
+        by_id = {}
+        ordered_hits = [hit for item in retrieval for hit in item.hits]
+        prioritized_ids = supporting_source_ids or [hit.source_id for hit in ordered_hits]
+        for source_id in prioritized_ids:
+            hit = next((item for item in ordered_hits if item.source_id == source_id), None)
+            row = self.source_catalog.resolve(source_id)
+            title = (
+                (hit.title if hit else None)
+                or (str(row.get("title", "")).strip() if row else "")
+                or source_id
+            )
+            source = OfficialSource(
+                source_id=source_id,
+                title=title,
+                law=(hit.law if hit else None) or (str(row.get("law", "")).strip() if row else None) or None,
+                article=(hit.article if hit else None) or (str(row.get("article", "")).strip() if row else None) or None,
+                source_type=(hit.source_type if hit else None) or (str(row.get("source_type", "")).strip() if row else None) or None,
+                jurisdiction=(hit.jurisdiction if hit else None) or (str(row.get("jurisdiction", "")).strip() if row else None) or None,
+                summary=(hit.summary if hit else None) or (str(row.get("summary", "")).strip() if row else None) or None,
+                official_url=(hit.official_url if hit else None) or (str(row.get("official_url", "")).strip() if row else None) or None,
+                relevance_score=hit.relevance_score if hit else None,
+            )
+            if source.source_id not in by_id:
+                by_id[source.source_id] = source
+            if len(by_id) >= 4:
+                break
+        return list(by_id.values())
+
+    @staticmethod
+    def _parse_legal_basis(raw_items: object) -> list[LegalBasisItem]:
+        parsed: list[LegalBasisItem] = []
+        if not isinstance(raw_items, list):
+            return parsed
+        for item in raw_items[:8]:
+            if not isinstance(item, dict):
+                continue
+            parsed.append(
+                LegalBasisItem(
+                    ley=str(item.get("ley", "")).strip(),
+                    articulo=str(item.get("articulo", "")).strip(),
+                    motivo=str(item.get("motivo", "")).strip(),
+                )
+            )
+        return parsed
+
+    @staticmethod
+    def _parse_applicable_articles(raw_items: object) -> list[ApplicableArticle]:
+        parsed: list[ApplicableArticle] = []
+        if not isinstance(raw_items, list):
+            return parsed
+        for item in raw_items[:8]:
+            if not isinstance(item, dict):
+                continue
+            parsed.append(
+                ApplicableArticle(
+                    ley=str(item.get("ley", "")).strip(),
+                    articulo=str(item.get("articulo", "")).strip(),
+                    relevancia=str(item.get("relevancia", "")).strip(),
+                )
+            )
+        return parsed
+
+    @staticmethod
+    def _build_explanation_summary(
+        extracted: ExtractedCase,
+        classification: MeasureClassification,
+        official_sources: list[OfficialSource],
+    ) -> str:
+        segments: list[str] = []
+        if classification.selected_template_name:
+            segments.append(f"Se sugiere {classification.selected_template_name.lower()}")
+        if classification.risk_level:
+            segments.append(f"por nivel de riesgo {classification.risk_level}")
+        if extracted.risk_factors:
+            segments.append(
+                "considerando "
+                + ", ".join(extracted.risk_factors[:3])
+            )
+        if official_sources:
+            source_titles = [src.title for src in official_sources[:2] if src.title]
+            if source_titles:
+                segments.append("con sustento en " + " y ".join(source_titles))
+        text = " ".join(segment.strip().rstrip(".") for segment in segments if segment).strip()
+        return (text + ".") if text else "La medida se sugiere por la combinación de hechos relevantes, riesgo detectado y sustento jurídico recuperado."
+
     def _classify_with_claude(
         self,
         client: object,
         cfg: object,
         extracted: ExtractedCase,
         retrieval: list[RetrievalResult],
+        prompt_variant: str,
     ) -> MeasureClassification:
         self.logger.info(
             "claude_classification_start case_id={} provider={} model={}",
@@ -120,6 +215,7 @@ class MeasureClassifierService:
             user_prompt=build_claude_measure_classification_user_prompt(
                 extracted=extracted,
                 fragmentos_rag=fragmentos_rag,
+                prompt_variant=prompt_variant,
             ),
             max_tokens=int(os.getenv("ANTHROPIC_MAX_OUTPUT_TOKENS", "4000") or "4000"),
             thinking_budget_tokens=thinking_budget or None,
@@ -146,37 +242,10 @@ class MeasureClassifierService:
         if not isinstance(fundamentacion, dict):
             fundamentacion = {}
 
-        def parse_legal_basis(raw_items: object) -> list[LegalBasisItem]:
-            parsed: list[LegalBasisItem] = []
-            if not isinstance(raw_items, list):
-                return parsed
-            for item in raw_items[:8]:
-                if not isinstance(item, dict):
-                    continue
-                parsed.append(
-                    LegalBasisItem(
-                        ley=str(item.get("ley", "")).strip(),
-                        articulo=str(item.get("articulo", "")).strip(),
-                        motivo=str(item.get("motivo", "")).strip(),
-                    )
-                )
-            return parsed
-
         articulos = fundamentacion.get("articulos_aplicables", [])
-        applicable_articles: list[ApplicableArticle] = []
-        if isinstance(articulos, list):
-            for item in articulos[:8]:
-                if not isinstance(item, dict):
-                    continue
-                applicable_articles.append(
-                    ApplicableArticle(
-                        ley=str(item.get("ley", "")).strip(),
-                        articulo=str(item.get("articulo", "")).strip(),
-                        relevancia=str(item.get("relevancia", "")).strip(),
-                    )
-                )
-        normative_basis = parse_legal_basis(response.get("normative_basis", []))
-        procedural_basis = parse_legal_basis(response.get("procedural_basis", []))
+        applicable_articles = self._parse_applicable_articles(articulos)
+        normative_basis = self._parse_legal_basis(response.get("normative_basis", []))
+        procedural_basis = self._parse_legal_basis(response.get("procedural_basis", []))
 
         indicators = response.get("indicadores_riesgo", [])
         if not isinstance(indicators, list):
@@ -194,7 +263,7 @@ class MeasureClassifierService:
             [hit.source_id for item in retrieval for hit in item.hits[:3]]
         )[:8]
 
-        return MeasureClassification(
+        base = MeasureClassification(
             provider=cfg.provider,
             model=cfg.model,
             selected_template_id=template.template_id,
@@ -212,6 +281,10 @@ class MeasureClassifierService:
             low_confidence_reason=str(response.get("motivo_baja_confianza", "")).strip() or None,
             draft_text=str(response.get("borrador_resolucion", "")).strip() or None,
         )
+        official_sources = self._build_official_sources(retrieval, supporting_source_ids)
+        base.official_sources = official_sources
+        base.explanation_summary = self._build_explanation_summary(extracted, base, official_sources)
+        return base
 
     def classify(
         self,
@@ -220,24 +293,34 @@ class MeasureClassifierService:
         provider: str,
         model: str | None = None,
         include_draft: bool = False,
+        prompt_variant: str | None = None,
     ) -> MeasureClassification:
+        normalized_prompt_variant = normalize_prompt_variant(prompt_variant)
         cfg, client = build_json_llm_client(provider=provider, model=model)
         assert_safe_for_external_llm(extracted)
         self.logger.info(
-            "classification_start case_id={} provider={} model={}",
+            "classification_start case_id={} provider={} model={} prompt_variant={}",
             extracted.case_id,
             cfg.provider,
             cfg.model,
+            normalized_prompt_variant,
         )
         if provider == "anthropic":
-            classification = self._classify_with_claude(client=client, cfg=cfg, extracted=extracted, retrieval=retrieval)
+            classification = self._classify_with_claude(
+                client=client,
+                cfg=cfg,
+                extracted=extracted,
+                retrieval=retrieval,
+                prompt_variant=normalized_prompt_variant,
+            )
             self.logger.info(
-                "classification_done case_id={} provider={} model={} template={} risk_level={}",
+                "classification_done case_id={} provider={} model={} template={} risk_level={} prompt_variant={}",
                 extracted.case_id,
                 classification.provider,
                 classification.model,
                 classification.selected_template_id,
                 classification.risk_level or "-",
+                normalized_prompt_variant,
             )
             return classification
 
@@ -268,19 +351,23 @@ class MeasureClassifierService:
                 }
             )
 
-        system_prompt = build_generic_measure_classification_system_prompt(include_draft=include_draft)
+        system_prompt = build_generic_measure_classification_system_prompt(
+            include_draft=include_draft,
+            prompt_variant=normalized_prompt_variant,
+        )
         user_prompt = build_generic_measure_classification_user_prompt(
             extracted=extracted,
             retrieval_support=retrieval_support,
             catalog=catalog,
             include_draft=include_draft,
+            prompt_variant=normalized_prompt_variant,
         )
 
         response = client.chat_json(system_prompt=system_prompt, user_prompt=user_prompt)
         template_id = str(response.get("selected_template_id", "")).strip()
         if template_id not in self.template_agent._catalog:
             fallback = self.template_agent.select(extracted)
-            return MeasureClassification(
+            fallback_classification = MeasureClassification(
                 provider=cfg.provider,
                 model=cfg.model,
                 selected_template_id=fallback.template_id,
@@ -289,14 +376,33 @@ class MeasureClassifierService:
                 confidence=0.0,
                 supporting_source_ids=[],
                 suggested_measures=[],
-                draft_text=fallback.text if include_draft else None,
+                draft_text=None,
             )
+            fallback_classification.explanation_summary = self._build_explanation_summary(
+                extracted,
+                fallback_classification,
+                [],
+            )
+            return fallback_classification
 
         template = self.template_agent._catalog[template_id]
         supporting_source_ids = response.get("supporting_source_ids", [])
         if not isinstance(supporting_source_ids, list):
             supporting_source_ids = []
         supporting_source_ids = self._dedupe_preserve_order([str(x) for x in supporting_source_ids])[:8]
+
+        risk_level = str(response.get("risk_level", "")).strip().lower() or None
+        if risk_level not in {"alto", "medio", "bajo"}:
+            risk_level = None
+        risk_indicators = response.get("risk_indicators", [])
+        if not isinstance(risk_indicators, list):
+            risk_indicators = []
+        alerts = response.get("alerts", [])
+        if not isinstance(alerts, list):
+            alerts = []
+        normative_basis = self._parse_legal_basis(response.get("normative_basis", []))
+        procedural_basis = self._parse_legal_basis(response.get("procedural_basis", []))
+        applicable_articles = self._parse_applicable_articles(response.get("applicable_articles", []))
 
         classification = MeasureClassification(
             provider=cfg.provider,
@@ -307,13 +413,28 @@ class MeasureClassifierService:
             confidence=float(response.get("confidence", 0.0) or 0.0),
             supporting_source_ids=supporting_source_ids,
             suggested_measures=[],
+            risk_level=risk_level,
+            risk_indicators=[str(item).strip() for item in risk_indicators if str(item).strip()],
+            alerts=[str(item).strip() for item in alerts if str(item).strip()],
+            applicable_articles=applicable_articles,
+            normative_basis=normative_basis,
+            procedural_basis=procedural_basis,
+            low_confidence_reason=str(response.get("low_confidence_reason", "")).strip() or None,
             draft_text=str(response.get("draft_text", "")).strip() or None,
         )
+        official_sources = self._build_official_sources(retrieval, supporting_source_ids)
+        classification.official_sources = official_sources
+        classification.explanation_summary = self._build_explanation_summary(
+            extracted,
+            classification,
+            official_sources,
+        )
         self.logger.info(
-            "classification_done case_id={} provider={} model={} template={}",
+            "classification_done case_id={} provider={} model={} template={} prompt_variant={}",
             extracted.case_id,
             classification.provider,
             classification.model,
             classification.selected_template_id,
+            normalized_prompt_variant,
         )
         return classification

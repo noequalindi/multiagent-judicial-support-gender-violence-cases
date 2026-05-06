@@ -12,6 +12,8 @@ class Citation(BaseModel):
     article: str | None = None
     source_type: str | None = None
     jurisdiction: str | None = None
+    official_url: str | None = None
+    summary: str | None = None
     relevance_score: float = Field(ge=0.0, le=1.0)
 
 
@@ -22,6 +24,8 @@ class ExtractedCase(BaseModel):
     active_measures: list[str]
     risk_factors: list[str]
     timeline: list[str]
+    origin_jurisdiction: str | None = None
+    decision_jurisdiction: str = "Provincia de Buenos Aires"
 
 
 class RetrievalResult(BaseModel):
@@ -63,6 +67,18 @@ class LegalBasisItem(BaseModel):
     motivo: str
 
 
+class OfficialSource(BaseModel):
+    source_id: str
+    title: str
+    law: str | None = None
+    article: str | None = None
+    source_type: str | None = None
+    jurisdiction: str | None = None
+    summary: str | None = None
+    official_url: str | None = None
+    relevance_score: float | None = None
+
+
 class MeasureClassification(BaseModel):
     provider: str
     model: str
@@ -80,3 +96,5 @@ class MeasureClassification(BaseModel):
     procedural_basis: list[LegalBasisItem] = []
     low_confidence_reason: str | None = None
     draft_text: str | None = None
+    explanation_summary: str | None = None
+    official_sources: list[OfficialSource] = []

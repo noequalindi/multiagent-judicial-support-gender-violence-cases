@@ -89,14 +89,16 @@ class OpenAICompatClient:
             return json.loads(match.group(0))
 
     def _post_chat(self, payload: dict[str, Any], extra_headers: dict[str, str] | None = None) -> dict[str, Any]:
+        headers = {
+            "Content-Type": "application/json",
+            **(extra_headers or {}),
+        }
+        if self.config.api_key:
+            headers["Authorization"] = f"Bearer {self.config.api_key}"
         with httpx.Client(timeout=120.0) as client:
             response = client.post(
                 f"{self.config.base_url}/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {self.config.api_key}",
-                    "Content-Type": "application/json",
-                    **(extra_headers or {}),
-                },
+                headers=headers,
                 json=payload,
             )
         if response.is_error:
@@ -114,11 +116,7 @@ class OpenAICompatClient:
                 with httpx.Client(timeout=120.0) as client:
                     retry = client.post(
                         f"{self.config.base_url}/chat/completions",
-                        headers={
-                            "Authorization": f"Bearer {self.config.api_key}",
-                            "Content-Type": "application/json",
-                            **(extra_headers or {}),
-                        },
+                        headers=headers,
                         json=retry_payload,
                     )
                 if retry.is_error:

@@ -1,78 +1,25 @@
 from __future__ import annotations
 
 import json
-import os
-import re
-import unicodedata
-from pathlib import Path
-from typing import Any
 
 from src.llm.client_factory import build_json_llm_client
 from src.llm.safety import assert_safe_for_external_llm
+from src.logging import get_logger
 from src.models.contracts import Citation, ExtractedCase, RetrievalResult
+from src.rag.local_retriever import LocalLegalRetriever
 from src.rag.pinecone_client import PineconeConfig, PineconeTextIndexClient
 
 
 class RetrievalAgent:
-    """RAG retrieval over Pinecone when configured, with lexical fallback on the local legal corpus."""
+    """RAG retrieval over Pinecone when configured, with local hybrid fallback."""
 
     def __init__(self) -> None:
+        self.logger = get_logger("retrieval")
         self._pinecone: PineconeTextIndexClient | None = None
-        self._local_corpus = self._load_local_corpus()
+        self._local_retriever = LocalLegalRetriever()
         cfg = PineconeConfig.from_env()
         if cfg:
             self._pinecone = PineconeTextIndexClient(cfg)
-
-    @staticmethod
-    def _stem(token: str) -> str:
-        for suffix in ("mientos", "miento", "ciones", "cion", "mente", "es", "s"):
-            if token.endswith(suffix) and len(token) > len(suffix) + 2:
-                return token[: -len(suffix)]
-        return token
-
-    @staticmethod
-    def _tokenize(text: str) -> set[str]:
-        normalized = "".join(
-            ch
-            for ch in unicodedata.normalize("NFD", (text or "").lower())
-            if unicodedata.category(ch) != "Mn"
-        )
-        raw_tokens = re.findall(r"[a-z0-9]+", normalized)
-        stopwords = {"la", "el", "los", "las", "de", "del", "y", "en", "se", "ante", "con", "para"}
-        tokens = [tok for tok in raw_tokens if tok not in stopwords]
-        return {RetrievalAgent._stem(tok) for tok in tokens}
-
-    @staticmethod
-    def _corpus_path() -> Path:
-        configured = os.getenv("LEGAL_CORPUS_PATH", "").strip()
-        if configured:
-            return Path(configured).expanduser().resolve()
-        return Path(__file__).resolve().parents[2] / "data" / "legal" / "templates" / "measure_corpus.jsonl"
-
-    @classmethod
-    def _load_local_corpus(cls) -> list[dict[str, Any]]:
-        path = cls._corpus_path()
-        if not path.exists():
-            return []
-
-        rows: list[dict[str, Any]] = []
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                row = json.loads(line)
-                if not isinstance(row, dict):
-                    continue
-
-                base_text = " ".join(
-                    str(row.get(field, "")).strip()
-                    for field in ("title", "summary", "text", "law", "article", "measure_type")
-                    if str(row.get(field, "")).strip()
-                )
-                row["_search_text"] = base_text
-                rows.append(row)
-        return rows
 
     @staticmethod
     def _build_query_bundle(extracted: ExtractedCase) -> list[str]:
@@ -82,6 +29,24 @@ class RetrievalAgent:
         ).strip()
         if combined:
             queries.append(combined)
+            queries.append(
+                f"{combined} jurisprudencia de violencia familiar La Matanza Provincia de Buenos Aires"
+            )
+
+        if extracted.origin_jurisdiction == "Ciudad Autónoma de Buenos Aires":
+            queries.append(
+                " ".join(
+                    part
+                    for part in [
+                        combined,
+                        "normativa",
+                        "protocolos",
+                        "Ciudad Autónoma de Buenos Aires",
+                        "OVD",
+                    ]
+                    if part
+                ).strip()
+            )
         seen: set[str] = set()
         deduped: list[str] = []
         for q in queries:
@@ -184,40 +149,21 @@ class RetrievalAgent:
                             article=str(fields.get("article", "")).strip() or None,
                             source_type=str(fields.get("source_type", "")).strip() or None,
                             jurisdiction=str(fields.get("jurisdiction", "")).strip() or None,
+                            official_url=(
+                                str(fields.get("official_source_url", "")).strip()
+                                or str(fields.get("official_url", "")).strip()
+                                or None
+                            ),
+                            summary=str(fields.get("summary", "")).strip() or None,
                             relevance_score=max(0.0, min(1.0, score)),
                         )
                     )
                 if citations:
                     return citations
-            except Exception:
-                # Keep system resilient: fallback to local lexical corpus.
-                pass
+            except Exception as exc:
+                self.logger.warning("pinecone_search_failed query='{}' error={}", query, str(exc))
 
-        hits = []
-        q_terms = self._tokenize(query)
-        for doc in self._local_corpus:
-            d_terms = self._tokenize(str(doc.get("_search_text", "")))
-            overlap = len(q_terms.intersection(d_terms))
-            if overlap == 0:
-                continue
-            score = overlap / max(1, len(q_terms))
-            if doc.get("source_type") == "template":
-                score += 0.05
-            if doc.get("measure_type") and doc.get("measure_type") in query.lower():
-                score += 0.05
-
-            excerpt = str(doc.get("text") or doc.get("summary") or "")[:500]
-            hits.append(
-                Citation(
-                    source_id=str(doc.get("_id") or doc.get("source_id") or "local_record"),
-                    excerpt=excerpt,
-                    title=str(doc.get("title", "")).strip() or None,
-                    law=str(doc.get("law", "")).strip() or None,
-                    article=str(doc.get("article", "")).strip() or None,
-                    source_type=str(doc.get("source_type", "")).strip() or None,
-                    jurisdiction=str(doc.get("jurisdiction", "")).strip() or None,
-                    relevance_score=round(max(0.0, min(1.0, score)), 3),
-                )
-            )
-        hits.sort(key=lambda x: x.relevance_score, reverse=True)
-        return hits
+        local_hits = self._local_retriever.search(query, top_k=5)
+        if local_hits:
+            self.logger.info("retrieval_local_fallback query='{}' hits={}", query, len(local_hits))
+        return local_hits

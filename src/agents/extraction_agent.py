@@ -8,13 +8,46 @@ from src.models.contracts import ExtractedCase
 class ExtractionAgent:
     """Initial rule-based extraction (placeholder)."""
 
+    _CABA_HINTS = {
+        "ciudad autonoma de buenos aires",
+        "ciudad de buenos aires",
+        "caba",
+        "policia de la ciudad",
+        "ovd",
+        "oficina de violencia domestica",
+        "comuna",
+        "palermo",
+        "flores",
+        "barracas",
+        "caballito",
+        "belgrano",
+        "almagro",
+        "villa urquiza",
+        "recoleta",
+        "liniers",
+        "mataderos",
+        "boedo",
+        "once",
+        "constitucion",
+        "san cristobal",
+        "villa lugano",
+    }
+
     @staticmethod
     def _normalize(text: str) -> str:
         text = (text or "").lower()
         return "".join(ch for ch in unicodedata.normalize("NFD", text) if unicodedata.category(ch) != "Mn")
 
+    @classmethod
+    def _detect_origin_jurisdiction(cls, lower: str) -> str | None:
+        for hint in cls._CABA_HINTS:
+            if hint in lower:
+                return "Ciudad Autónoma de Buenos Aires"
+        return None
+
     def invoke(self, case_id: str, anonymized_text: str) -> ExtractedCase:
         lower = self._normalize(anonymized_text)
+        origin_jurisdiction = self._detect_origin_jurisdiction(lower)
 
         facts = []
         if "amenaza" in lower:
@@ -56,4 +89,5 @@ class ExtractionAgent:
             active_measures=active_measures,
             risk_factors=risk_factors,
             timeline=timeline,
+            origin_jurisdiction=origin_jurisdiction,
         )

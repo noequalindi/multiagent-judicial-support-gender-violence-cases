@@ -17,6 +17,16 @@ else:
 from src.orchestration.batch_runner import BatchConfig, list_pdfs, process_one_pdf_safe, write_manifest
 
 
+def batch_graph_available() -> bool:
+    return _LANGGRAPH_IMPORT_ERROR is None
+
+
+def batch_graph_unavailable_reason() -> str:
+    if _LANGGRAPH_IMPORT_ERROR is None:
+        return ""
+    return "El procesamiento batch requiere LangGraph y no está instalado en este entorno."
+
+
 class BatchGraphState(TypedDict, total=False):
     cfg: BatchConfig
     pdf_paths: list[str]
@@ -62,9 +72,7 @@ def finalize_batch(state: BatchGraphState) -> dict[str, Any]:
 
 def build_batch_graph():
     if _LANGGRAPH_IMPORT_ERROR is not None:
-        raise RuntimeError(
-            "LangGraph is not installed. Install project dependencies again to enable the batch graph."
-        ) from _LANGGRAPH_IMPORT_ERROR
+        raise RuntimeError(batch_graph_unavailable_reason()) from _LANGGRAPH_IMPORT_ERROR
 
     graph = StateGraph(BatchGraphState)
     graph.add_node("discover_pdfs", discover_pdfs)

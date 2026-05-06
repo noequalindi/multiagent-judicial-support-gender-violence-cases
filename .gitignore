@@ -15,3 +15,6 @@ build/
 *.egg
 *.swp
 .DS_Store
+poc/qlora/artifacts/
+poc/qlora/output/
+poc/qlora/cache/
